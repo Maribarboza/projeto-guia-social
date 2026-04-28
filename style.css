@@ -53,3 +53,25 @@ tr:nth-child(even) {
     display: inline-block;
     margin-top: 20px;
 }
+
+/* Estilo do Menu de Navegação */
+nav {
+    background-color: #003d80; /* Um azul um pouco mais escuro */
+    padding: 10px 0;
+    text-align: center;
+    position: sticky; /* Faz o menu ficar parado no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
