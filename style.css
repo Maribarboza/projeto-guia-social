@@ -28,3 +28,23 @@ footer  {
   font-size: 0. 9rem;
   color:  #666;
 }
+.botoes-container{
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.botao {
+  background-color:  #0056b3;
+  color: white;
+  paddind: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.botao:hover {
+  background-color:  #003d80;
+}
