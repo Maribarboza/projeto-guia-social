@@ -1,13 +1,11 @@
-/* Configuração Geral */
 body {
-    font-family: 'Inter', sans-serif, Arial;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     background-color: #f4f7f6;
     color: #333;
 }
 
-/* Cabeçalho igual ao da página inicial */
 header {
     background: #0056b3;
     color: #ffffff;
@@ -18,38 +16,33 @@ header {
 main {
     padding: 20px;
     max-width: 900px;
-    margin: auto;
+    margin: 20px auto;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* AGORA SIM: O estilo da Tabela */
 table {
     width: 100%;
-    border-collapse: collapse; /* Tira os espaços entre as bordas */
+    border-collapse: collapse;
     margin: 25px 0;
-    background-color: white;
 }
 
 th, td {
-    padding: 15px;
-    border: 1px solid #ddd; /* Cria as linhas fininhas */
+    padding: 12px;
+    border: 1px solid #ddd;
     text-align: left;
 }
 
 th {
-    background-color: #0056b3; /* Topo da tabela azul */
+    background-color: #0056b3;
     color: white;
-    font-weight: bold;
 }
 
-/* Efeito Zebra: uma linha branca e outra cinza claro */
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Estilo dos Botões */
 .botao {
     background-color: #0056b3;
     color: white;
@@ -59,8 +52,4 @@ tr:nth-child(even) {
     font-weight: bold;
     display: inline-block;
     margin-top: 20px;
-}
-
-.botao:hover {
-    background-color: #003d80;
 }
