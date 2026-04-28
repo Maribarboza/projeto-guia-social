@@ -48,3 +48,35 @@ footer  {
 .botao:hover {
   background-color:  #003d80;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Deixa uma linha sim e outra não cinza para facilitar a leitura */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* No tablet, se a tabela for muito larga, ela deixa rolar para o lado */
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
