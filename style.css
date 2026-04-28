@@ -49,11 +49,13 @@ footer  {
   background-color:  #003d80;
 }
 
+
+/* Estilo para a Tabela de Regionais */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 0.9rem;
+    background-color: white;
 }
 
 th, td {
@@ -67,16 +69,6 @@ th {
     color: white;
 }
 
-/* Deixa uma linha sim e outra não cinza para facilitar a leitura */
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
 }
-
-/* No tablet, se a tabela for muito larga, ela deixa rolar para o lado */
-@media screen and (max-width: 600px) {
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-}
-
