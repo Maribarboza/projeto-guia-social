@@ -1,74 +1,66 @@
+/* Configuração Geral */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin:0;
-  background-color: #f4f4f9;
-  color: #333;
+    font-family: 'Inter', sans-serif, Arial;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
 }
 
-header{
-  background: #0056b3;
-  color: #ffffff;
-  padding: 2rem;
+/* Cabeçalho igual ao da página inicial */
+header {
+    background: #0056b3;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
 }
 
-main{
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-  background: #fff;
-  border-radius: 8px
-  box-shadow: 0 4px 6px    rgba(0,0,0,0.1);
-}
-h1 {margin:  0; }
-
-footer  {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0. 9rem;
-  color:  #666;
-}
-.botoes-container{
-  margin-top: 20px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.botao {
-  background-color:  #0056b3;
-  color: white;
-  paddind: 12px 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.botao:hover {
-  background-color:  #003d80;
-}
-
-
-/* Estilo para a Tabela de Regionais */
+/* AGORA SIM: O estilo da Tabela */
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+    border-collapse: collapse; /* Tira os espaços entre as bordas */
+    margin: 25px 0;
     background-color: white;
 }
 
 th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid #ddd; /* Cria as linhas fininhas */
     text-align: left;
 }
 
 th {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Topo da tabela azul */
     color: white;
+    font-weight: bold;
 }
 
+/* Efeito Zebra: uma linha branca e outra cinza claro */
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
+}
+
+/* Estilo dos Botões */
+.botao {
+    background-color: #0056b3;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.botao:hover {
+    background-color: #003d80;
 }
