@@ -77,37 +77,29 @@ header {
 
 
 /* Estilo do Menu de Navegação */
+/* O menu agora vai ter cara de menu profissional */
 nav {
-    background-color: #003d80; /* Um azul um pouco mais escuro */
-    padding: 10px 0;
-    text-align: center;
-    position: sticky; /* Faz o menu ficar parado no topo ao rolar */
-    top: 0;
-    z-index: 1000;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Dá um respiro bem grande entre os nomes */
 }
 
 nav a {
-    color: white;
+    font-size: 1.1rem; /* Letras maiores e mais visíveis */
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 0.9rem;
+    color: white;
+    padding-bottom: 8px; /* Espaço para a linha não grudar no texto */
+    transition: 0.3s;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-/* Estilo do FAQ */
-.faq-secao {
-    margin-top: 30px;
-    text-align: left;
-}
-
+/* O destaque da página atual */
 nav a.ativo {
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid white; /* Linha um pouco mais grossa */
     font-weight: bold;
-    opacity: 1; /* Garante que o nome fique bem visível */
 }
+
 
 /* Estilo do FAQ - Versão com Cores Diferentes */
 details {
