@@ -1,39 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos - Guia Social</title>
-    <link rel="stylesheet" href="style.css"> <!-- Importante para manter o visual! -->
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="contatos.html">Contatos CRAS</a>
-        </nav>
-        <h1>Contatos de Emergência e Serviços</h1>
-        <p>Encontre aqui os principais telefones e endereços úteis.</p>
-    </header>
-
-    <main>
-        <!-- Vamos usar a mesma classe dos cards para manter o padrão -->
-        <section class="card-servico">
-            <h2>CRAS - Centro de Referência</h2>
-            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
-            <p><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro</p>
-            <a href="tel:0800" class="botao-contato">Ligar Agora</a>
-        </section>
-
-        <section class="card-servico">
-            <h2>CREAS - Proteção Especial</h2>
-            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
-            <p><strong>Horário:</strong> 08:00 às 17:00</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>Desenvolvido por Mariana Luiza Mendes Barboza</p>
-    </footer>
-</body>
-</html>
+<table class="tabela-contatos">
+    <thead>
+        <tr style="background-color: #0056b3; color: white;">
+            <th>Regional</th>
+            <th>Exemplos de CRAS</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="linha-contato">
+            <td>Barreiro</td>
+            <td>Barreiro / Vila Copacabana</td>
+            <td><a href="tel:3132775899">(31) 3277-5899</a></td>
+        </tr>
+        <tr class="linha-contato">
+            <td>Centro-Sul</td>
+            <td>Santa Rita de Cássia</td>
+            <td><a href="tel:3132774363">(31) 3277-4363</a></td>
+        </tr>
+        <!-- Adicione as outras linhas seguindo esse modelo class="linha-contato" -->
+    </tbody>
+</table>
