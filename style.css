@@ -52,6 +52,22 @@ tr:nth-child(even) {
     font-weight: bold;
     display: inline-block;
     margin-top: 20px;
+/* Estilizando os botões para ficarem suaves */
+.botao-link, button, .portal-button { 
+    border-radius: 12px; /* Deixa as pontas arredondadas */
+    padding: 12px 20px;
+    transition: transform 0.2s, background-color 0.2s;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Efeito de quando passa o mouse ou clica */
+.botao-link:hover {
+    background-color: #004494; /* Escurece um pouquinho o azul */
+    transform: scale(1.05); /* Dá um leve zoom */
+}
+
 }
 
 /* Estilo do Menu de Navegação */
