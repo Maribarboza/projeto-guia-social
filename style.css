@@ -61,6 +61,24 @@ tr:nth-child(even) {
     border: none;
     cursor: pointer;
 }
+/* Estilizando os botões que você criou com a classe "botao" */
+.botao {
+    display: inline-block;
+    background-color: #0056b3; /* Azul igual ao cabeçalho */
+    color: white !important;   /* Força a letra a ser branca */
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 12px;       /* O arredondamento que você queria! */
+    font-weight: bold;
+    transition: transform 0.2s; /* Efeito suave ao clicar */
+    text-align: center;
+}
+
+.botao:hover {
+    transform: scale(1.05);    /* Aumenta um pouquinho quando passa o dedo/mouse */
+    background-color: #004494;
+}
 
 /* Efeito de quando passa o mouse ou clica */
 .botao-link:hover {
