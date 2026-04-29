@@ -1,31 +1,30 @@
-document.addEventListener('input', (e) => {
+document.addEventListener('input', function (e) {
     if (e.target.id === 'inputBusca') {
-        const valorBusca = e.target.value.trim();
+        const termo = e.target.value.trim().toLowerCase();
         const cards = document.querySelectorAll('.card-servico');
 
         cards.forEach(card => {
-            // Salva o texto original na primeira vez para não perder as informações
-            if (!card.getAttribute('data-original')) {
-                card.setAttribute('data-original', card.innerHTML);
+            // Se ainda não salvamos o texto original, salvamos agora
+            if (!card.dataset.original) {
+                card.dataset.original = card.innerHTML;
             }
 
-            const textoOriginal = card.getAttribute('data-original');
+            const conteudoOriginal = card.dataset.original;
 
-            if (valorBusca !== "") {
-                const expressao = new RegExp(`(${valorBusca})`, 'gi');
-                
-                // Se a palavra existe no texto
-                if (textoOriginal.toLowerCase().includes(valorBusca.toLowerCase())) {
-                    card.style.display = "block";
-                    // Troca a palavra pela palavra envolvida na tag <mark>
-                    card.innerHTML = textoOriginal.replace(expressao, '<mark style="background-color: yellow; color: black; padding: 2px; border-radius: 3px;">$1</mark>');
-                } else {
-                    card.style.display = "none";
-                }
-            } else {
-                // Se a busca estiver vazia, volta tudo ao normal
+            if (termo === "") {
                 card.style.display = "block";
-                card.innerHTML = textoOriginal;
+                card.innerHTML = conteudoOriginal;
+                return;
+            }
+
+            if (card.textContent.toLowerCase().includes(termo)) {
+                card.style.display = "block";
+                
+                // Cria uma versão do texto com a palavra destacada
+                const regex = new RegExp(`(${termo})`, 'gi');
+                card.innerHTML = conteudoOriginal.replace(regex, '<span style="background-color: yellow; font-weight: bold;">$1</span>');
+            } else {
+                card.style.display = "none";
             }
         });
     }
