@@ -1,29 +1,28 @@
-document.addEventListener('input', function (e) {
+document.addEventListener('input', (e) => {
     if (e.target.id === 'inputBusca') {
         const termo = e.target.value.trim().toLowerCase();
         const cards = document.querySelectorAll('.card-servico');
 
         cards.forEach(card => {
-            // Se ainda não salvamos o texto original, salvamos agora
-            if (!card.dataset.original) {
-                card.dataset.original = card.innerHTML;
-            }
+            const titulo = card.querySelector('h2'); // Pega o título do card
+            const textoCard = card.textContent.toLowerCase();
 
-            const conteudoOriginal = card.dataset.original;
-
-            if (termo === "") {
-                card.style.display = "block";
-                card.innerHTML = conteudoOriginal;
-                return;
-            }
-
-            if (card.textContent.toLowerCase().includes(termo)) {
+            if (termo !== "" && textoCard.includes(termo)) {
                 card.style.display = "block";
                 
-                // Cria uma versão do texto com a palavra destacada
-                const regex = new RegExp(`(${termo})`, 'gi');
-                card.innerHTML = conteudoOriginal.replace(regex, '<span style="background-color: yellow; font-weight: bold;">$1</span>');
-            } else {
+                // Estilo de UX: Destaque suave e profissional
+                card.style.borderLeft = "8px solid #0056b3"; // Uma barra lateral azul
+                card.style.backgroundColor = "#f0f7ff";      // Fundo azul bem clarinho
+                if(titulo) titulo.style.color = "#0056b3";   // Título fica azul
+            } 
+            else if (termo === "") {
+                // Volta ao normal
+                card.style.display = "block";
+                card.style.borderLeft = "1px solid #ccc";
+                card.style.backgroundColor = "white";
+                if(titulo) titulo.style.color = "black";
+            } 
+            else {
                 card.style.display = "none";
             }
         });
