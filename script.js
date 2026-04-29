@@ -27,3 +27,5 @@ document.addEventListener('input', (e) => {
         });
     }
 });
+// Atualiza o ano automaticamente
+document.getElementById('ano-atual').textContent = new Date().getFullYear();
