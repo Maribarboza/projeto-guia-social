@@ -230,3 +230,10 @@ footer a:hover {
     width: 35px;
     height: 35px;
 }
+
+/* Cor para o link da página que está aberta */
+nav a.ativo {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid white;
+    font-weight: bold;
+}
