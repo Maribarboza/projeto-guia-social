@@ -117,3 +117,16 @@ details p {
     border: 2px solid transparent; /* Reserva o espaço da borda */
 }
 
+/* Estilo base para os cards */
+.card-servico {
+    transition: all 0.4s ease; /* Faz a cor mudar suavemente */
+    border-left: 5px solid transparent; /* Reserva o espaço da barra lateral */
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Quando o JS mudar o estilo, ele vai usar essas transições */
+
