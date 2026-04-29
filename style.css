@@ -74,11 +74,9 @@ tr:nth-child(even) {
     background-color: #0056b3;      /* Inverte a cor quando toca */
     color: white !important;
     transform: translateY(-3px);    /* Sobe de leve */
-}
-
-
 
 }
+
 
 /* Estilo do Menu de Navegação */
 nav {
