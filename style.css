@@ -43,34 +43,37 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.botao {
+/* Isso resolve o problema de cima, dando espaço para o cabeçalho */
+header {
+    padding: 40px 15px;
+    text-align: center;
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Isso organiza os botões e tira o duplicado visual */
 .botoes-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 30px 15px;
+    gap: 10px;
+    margin: 30px 10px;
 }
 
 .botao {
     flex: 1;
-    max-width: 180px;
-    padding: 12px;
+    max-width: 150px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem;
-    color: #0056b3 !important;
-    background-color: white;
-    border: 2px solid #0056b3;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    color: #0056b3 !important; /* Cor da letra azul */
+    background-color: white;    /* Fundo branco */
+    border: 2px solid #0056b3; /* Borda azul */
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
-.botao:hover {
-    background-color: #0056b3;
-    color: white !important;
-    transform: translateY(-3px);
-}
 
 
 /* Estilo do Menu de Navegação */
