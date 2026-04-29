@@ -76,26 +76,36 @@ header {
 
 
 /* O menu agora vai ter cara de menu profissional */
+/* Limpeza e Equilíbrio do Topo */
+header {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 60px 20px 40px 20px; /* Dá o respiro que você queria */
+}
+
 nav {
-    margin-bottom: 50px;
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* Dá um respiro bem grande entre os nomes */
+    margin-bottom: 50px; /* Separa o menu do título com elegância */
 }
 
 nav a {
-    font-size: 1.1rem; /* Letras maiores e mais visíveis */
-    text-decoration: none;
     color: white;
-    padding-bottom: 8px; /* Espaço para a linha não grudar no texto */
-    transition: 0.3s;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço lateral entre os nomes */
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
-/* O destaque da página atual */
+/* O destaque da página atual (Simples e Moderno) */
 nav a.ativo {
-    border-bottom: 3px solid white; /* Linha um pouco mais grossa */
+    border-bottom: 2px solid white;
     font-weight: bold;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
 
