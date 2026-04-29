@@ -75,27 +75,41 @@ header {
 }
 
 
-/* O menu agora vai ter cara de menu profissional */
-/* Limpeza e Equilíbrio do Topo */
 header {
     background-color: #0056b3;
     color: white;
     text-align: center;
-    padding: 60px 20px 40px 20px; /* Dá o respiro que você queria */
+    padding: 40px 20px; /* Reduzimos um pouco para não ficar um "buraco" */
 }
 
 nav {
-    margin-bottom: 50px; /* Separa o menu do título com elegância */
+    margin-bottom: 30px; /* Distância perfeita para o título */
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px; /* Espaço lateral entre os nomes */
-    font-size: 1.1rem;
+    margin: 0 12px;
+    font-size: 1rem; /* Tamanho padrão Apple/Google */
     padding-bottom: 5px;
     display: inline-block;
+    opacity: 0.8; /* Fica um pouco mais clarinho para não brigar com o H1 */
+    transition: 0.3s;
 }
+
+nav a.ativo {
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    opacity: 1; /* O que está ativo fica bem aceso */
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin: 0 auto 10px auto;
+    max-width: 300px; /* Faz o título quebrar em duas linhas, fica mais elegante no celular */
+    line-height: 1.2;
+}
+
 
 /* O destaque da página atual (Simples e Moderno) */
 nav a.ativo {
