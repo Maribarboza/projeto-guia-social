@@ -1,30 +1,34 @@
-// Este código é mais direto para funcionar no celular
-const iniciarBusca = () => {
-    const campoBusca = document.getElementById('inputBusca');
+document.addEventListener('DOMContentLoaded', () => {
+    const campoBusca = document.querySelector('#inputBusca');
     const cards = document.querySelectorAll('.card-servico');
 
-    if (!campoBusca) return; // Segurança caso o campo não exista
-
     campoBusca.addEventListener('input', () => {
-        const valorBusca = campoBusca.value.toLowerCase();
+        const valorBusca = campoBusca.value.trim(); // Pega o que foi digitado
+        const termoRegExp = new RegExp(`(${valorBusca})`, 'gi'); // Cria uma regra para achar a palavra
 
         cards.forEach(card => {
-            const textoCard = card.textContent.toLowerCase();
+            // 1. Primeiro, removemos marcações antigas para não bagunçar
+            // Pegamos o texto puro, sem as tags de marca-texto
+            if (!card.dataset.original) {
+                card.dataset.original = card.innerHTML; 
+            }
+            let textoOriginal = card.dataset.original;
 
-            if (valorBusca !== "" && textoCard.includes(valorBusca)) {
+            if (valorBusca !== "" && textoOriginal.toLowerCase().includes(valorBusca.toLowerCase())) {
                 card.style.display = "block";
-                card.style.backgroundColor = "#fff3cd"; // Amarelo destaque
-                card.style.borderColor = "#ffc107";
+                
+                // 2. A MÁGICA: Substitui a palavra pelo texto com a tag <mark>
+                card.innerHTML = textoOriginal.replace(termoRegExp, '<mark style="background-color: yellow; color: black;">$1</mark>');
+                
+                // Remove o fundo amarelo do card inteiro que tínhamos antes
+                card.style.backgroundColor = ""; 
+                card.style.border = "";
             } else if (valorBusca === "") {
                 card.style.display = "block";
-                card.style.backgroundColor = ""; 
-                card.style.borderColor = "";
+                card.innerHTML = textoOriginal; // Volta o texto ao normal
             } else {
                 card.style.display = "none";
             }
         });
     });
-};
-
-// Executa a função
-iniciarBusca();
+});
