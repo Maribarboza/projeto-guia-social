@@ -1,34 +1,24 @@
-document.addEventListener('input', (e) => {
-    if (e.target.id === 'inputBusca') {
-        const termo = e.target.value.trim().toLowerCase();
+const input = document.getElementById('inputBusca');
+
+if (input) {
+    input.oninput = function() {
+        const termo = input.value.toLowerCase();
         const cards = document.querySelectorAll('.card-servico');
 
         cards.forEach(card => {
-            const textoDoCard = card.textContent.toLowerCase();
-            const titulo = card.querySelector('h2');
+            const texto = card.innerText.toLowerCase();
 
-            if (termo !== "" && textoDoCard.includes(termo)) {
+            if (termo !== "" && texto.includes(termo)) {
                 card.style.display = "block";
-                
-                // Estilo Profissional (UX)
-                card.style.backgroundColor = "#f0f7ff"; // Azul bem suave
-                card.style.borderLeft = "10px solid #0056b3"; // Barra lateral forte
-                if(titulo) {
-                    titulo.style.color = "#0056b3";
-                    titulo.style.fontWeight = "bold";
-                }
+                card.style.borderLeft = "10px solid #0056b3"; // A barra azul
+                card.style.backgroundColor = "#f0f7ff";
             } else if (termo === "") {
-                // Reset Total
                 card.style.display = "block";
-                card.style.backgroundColor = "white";
                 card.style.borderLeft = "1px solid #ddd";
-                if(titulo) {
-                    titulo.style.color = "#333";
-                    titulo.style.fontWeight = "normal";
-                }
+                card.style.backgroundColor = "white";
             } else {
                 card.style.display = "none";
             }
         });
-    }
-});
+    };
+}
