@@ -103,6 +103,12 @@ nav a:hover {
     text-align: left;
 }
 
+nav a.ativo {
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    opacity: 1; /* Garante que o nome fique bem visível */
+}
+
 /* Estilo do FAQ - Versão com Cores Diferentes */
 details {
     background-color: #ffffff;
