@@ -46,34 +46,31 @@ tr:nth-child(even) {
 .botao {
 .botoes-container {
     display: flex;
-    justify-content: center; /* Centraliza */
-    gap: 15px;               /* Espaço entre eles */
-    margin: 30px 0;
-    padding: 0 15px;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 15px;
 }
 
 .botao {
-    flex: 1;                 /* Faz os dois terem o mesmo tamanho */
-    max-width: 180px;        /* Não deixa ficarem gigantes */
+    flex: 1;
+    max-width: 180px;
     padding: 12px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
-    
-    /* ESTILO CLEAN UX */
-    color: #0056b3 !important;      /* Letra azul */
-    background-color: white;        /* Fundo branco */
-    border: 2px solid #0056b3;     /* Borda azul */
-    border-radius: 25px;            /* Bem arredondado (estilo pílula) */
-    
+    color: #0056b3 !important;
+    background-color: white;
+    border: 2px solid #0056b3;
+    border-radius: 25px;
     transition: all 0.3s ease;
 }
 
 .botao:hover {
-    background-color: #0056b3;      /* Inverte a cor quando toca */
+    background-color: #0056b3;
     color: white !important;
-    transform: translateY(-3px);    /* Sobe de leve */
+    transform: translateY(-3px);
+}
 
 }
 
