@@ -1,34 +1,33 @@
 document.addEventListener('input', (e) => {
     if (e.target.id === 'inputBusca') {
-        const termo = e.target.value.trim();
+        const termo = e.target.value.trim().toLowerCase();
         const cards = document.querySelectorAll('.card-servico');
 
         cards.forEach(card => {
-            // Salva o texto original para não perder os links e botões
-            if (!card.dataset.original) {
-                card.dataset.original = card.innerHTML;
-            }
-            const conteudoOriginal = card.dataset.original;
+            const textoDoCard = card.textContent.toLowerCase();
+            const titulo = card.querySelector('h2');
 
-            if (termo !== "") {
-                const expressao = new RegExp(`(${termo})`, 'gi');
+            if (termo !== "" && textoDoCard.includes(termo)) {
+                card.style.display = "block";
                 
-                if (card.textContent.toLowerCase().includes(termo.toLowerCase())) {
-                    card.style.display = "block";
-                    card.style.backgroundColor = "#f0f7ff";
-                    card.style.borderLeft = "8px solid #0056b3";
-                    
-                    // A MÁGICA: Coloca a tag <b> em volta da palavra encontrada
-                    card.innerHTML = conteudoOriginal.replace(expressao, '<b>$1</b>');
-                } else {
-                    card.style.display = "none";
+                // Estilo Profissional (UX)
+                card.style.backgroundColor = "#f0f7ff"; // Azul bem suave
+                card.style.borderLeft = "10px solid #0056b3"; // Barra lateral forte
+                if(titulo) {
+                    titulo.style.color = "#0056b3";
+                    titulo.style.fontWeight = "bold";
                 }
-            } else {
-                // Volta tudo ao normal quando apaga a busca
+            } else if (termo === "") {
+                // Reset Total
                 card.style.display = "block";
                 card.style.backgroundColor = "white";
-                card.style.borderLeft = "5px solid transparent";
-                card.innerHTML = conteudoOriginal;
+                card.style.borderLeft = "1px solid #ddd";
+                if(titulo) {
+                    titulo.style.color = "#333";
+                    titulo.style.fontWeight = "normal";
+                }
+            } else {
+                card.style.display = "none";
             }
         });
     }
