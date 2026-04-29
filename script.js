@@ -1,6 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const campoBusca = document.querySelector('#inputBusca');
+// Este código é mais direto para funcionar no celular
+const iniciarBusca = () => {
+    const campoBusca = document.getElementById('inputBusca');
     const cards = document.querySelectorAll('.card-servico');
+
+    if (!campoBusca) return; // Segurança caso o campo não exista
 
     campoBusca.addEventListener('input', () => {
         const valorBusca = campoBusca.value.toLowerCase();
@@ -8,26 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach(card => {
             const textoCard = card.textContent.toLowerCase();
 
-            // Se encontrou a palavra
             if (valorBusca !== "" && textoCard.includes(valorBusca)) {
                 card.style.display = "block";
-                card.style.backgroundColor = "#fff3cd"; // Fundo amarelo destaque
-                card.style.border = "2px solid #ffc107"; // Borda amarela
-                card.style.padding = "15px";
-                card.style.borderRadius = "8px";
-            } 
-            // Se a busca estiver vazia, volta ao normal
-            else if (valorBusca === "") {
+                card.style.backgroundColor = "#fff3cd"; // Amarelo destaque
+                card.style.borderColor = "#ffc107";
+            } else if (valorBusca === "") {
                 card.style.display = "block";
                 card.style.backgroundColor = ""; 
-                card.style.border = "";
-            } 
-            // Se não encontrou, esconde
-            else {
+                card.style.borderColor = "";
+            } else {
                 card.style.display = "none";
             }
         });
     });
-});
+};
 
-   
+// Executa a função
+iniciarBusca();
