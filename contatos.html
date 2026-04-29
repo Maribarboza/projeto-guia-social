@@ -1,56 +1,94 @@
-<table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-    <thead>
-        <tr style="background-color: #0056b3; color: white; text-align: left;">
-            <th style="padding: 10px; border: 1px solid #ddd;">Regional</th>
-            <th style="padding: 10px; border: 1px solid #ddd;">Exemplos de CRAS</th>
-            <th style="padding: 10px; border: 1px solid #ddd;">Telefone</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Barreiro</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Barreiro / Vila Copacabana</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132775899">(31) 3277-5899</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Centro-Sul</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Santa Rita de Cássia</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132774363">(31) 3277-4363</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Leste</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Alto Vera Cruz / Taquaril</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132775640">(31) 3277-5640</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Nordeste</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Paulo VI / São Paulo</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132776228">(31) 3277-6228</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Noroeste</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Lagoinha / Sr. dos Passos</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132777615">(31) 3277-7615</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Norte</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Novo Aarão Reis / Zilah Spósito</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132777427">(31) 3277-7427</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Oeste</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Morro das Pedras / Havaí</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132777013">(31) 3277-7013</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Pampulha</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Santa Rosa / São José</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132777856">(31) 3277-7856</a></td>
-        </tr>
-        <tr class="linha-contato">
-            <td style="padding: 10px; border: 1px solid #ddd;"><b>Venda Nova</b></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Lagoa / Jardim Europa</td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="tel:3132775440">(31) 3277-5440</a></td>
-        </tr>
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos - Guia Social</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="contatos.html">Contatos CRAS</a>
+        </nav>
+        <div style="padding: 20px 0;">
+            <h1>Contatos e Regionais</h1>
+            <p>Lista completa de telefones e unidades de BH.</p>
+        </div>
+
+        <!-- Barra de busca para filtrar a tabela -->
+        <div style="text-align: center; padding-bottom: 20px;">
+            <input type="text" id="inputBusca" placeholder="Busque por regional ou bairro..." 
+            style="padding: 12px; width: 85%; border-radius: 8px; border: 1px solid #ccc;">
+        </div>
+    </header>
+
+    <main style="padding: 20px;">
+        <div style="overflow-x: auto;"> <!-- Isso ajuda a tabela não quebrar no celular -->
+            <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <thead>
+                    <tr style="background-color: #0056b3; color: white; text-align: left;">
+                        <th style="padding: 15px; border: 1px solid #ddd;">Regional</th>
+                        <th style="padding: 15px; border: 1px solid #ddd;">Exemplos de CRAS</th>
+                        <th style="padding: 15px; border: 1px solid #ddd;">Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Barreiro</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Barreiro / Vila Copacabana</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132775899">(31) 3277-5899</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Centro-Sul</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Santa Rita de Cássia</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132774363">(31) 3277-4363</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Leste</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Alto Vera Cruz / Taquaril</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132775640">(31) 3277-5640</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Nordeste</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Paulo VI / São Paulo</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132776228">(31) 3277-6228</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Noroeste</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Lagoinha / Sr. dos Passos</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777615">(31) 3277-7615</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Norte</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Novo Aarão Reis / Zilah Spósito</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777427">(31) 3277-7427</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Oeste</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Morro das Pedras / Havaí</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777013">(31) 3277-7013</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Pampulha</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Santa Rosa / São José</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777856">(31) 3277-7856</a></td>
+                    </tr>
+                    <tr class="linha-contato">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Venda Nova</b></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Lagoa / Jardim Europa</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132775440">(31) 3277-5440</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer style="padding: 20px; text-align: center;">
+        <p>Desenvolvido por Mariana Luiza Mendes Barboza</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
