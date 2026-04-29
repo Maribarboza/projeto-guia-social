@@ -237,3 +237,18 @@ nav a.ativo {
     border-bottom: 2px solid white;
     font-weight: bold;
 }
+
+/* Isso vai desgrudar o menu do título e dar ar ao cabeçalho */
+header {
+    padding: 60px 20px 40px 20px; /* Mais espaço no topo para o menu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Cria um espaço padrão entre o menu, o título e o parágrafo */
+}
+
+/* Garante que o menu fique lá no topo, com folga */
+nav {
+    margin-bottom: 30px; 
+}
+
