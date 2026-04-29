@@ -1,24 +1,29 @@
-const input = document.getElementById('inputBusca');
+document.addEventListener('input', (e) => {
+    // Verifica se estamos digitando no campo de busca
+    if (e.target.id === 'inputBusca') {
+        const termo = e.target.value.trim().toLowerCase();
+        
+        // Selecionamos as SEÇÕES (da index) e as LINHAS da tabela (da contatos)
+        // Certifique-se de que suas linhas na tabela tenham a tag <tr>
+        const itensParaFiltrar = document.querySelectorAll('.card-servico, tbody tr');
 
-if (input) {
-    input.oninput = function() {
-        const termo = input.value.toLowerCase();
-        const cards = document.querySelectorAll('.card-servico');
+        itensParaFiltrar.forEach(item => {
+            const textoDoItem = item.textContent.toLowerCase();
 
-        cards.forEach(card => {
-            const texto = card.innerText.toLowerCase();
-
-            if (termo !== "" && texto.includes(termo)) {
-                card.style.display = "block";
-                card.style.borderLeft = "10px solid #0056b3"; // A barra azul
-                card.style.backgroundColor = "#f0f7ff";
-            } else if (termo === "") {
-                card.style.display = "block";
-                card.style.borderLeft = "1px solid #ddd";
-                card.style.backgroundColor = "white";
+            if (termo === "" || textoDoItem.includes(termo)) {
+                // Se o termo bater ou a busca estiver vazia, mostra o item
+                item.style.display = ""; 
+                
+                // Feedback visual: se estiver buscando, destaca a linha/card com azul claro
+                if (termo !== "") {
+                    item.style.backgroundColor = "#f0f7ff";
+                } else {
+                    item.style.backgroundColor = ""; // Reseta quando apaga
+                }
             } else {
-                card.style.display = "none";
+                // Se não bater, esconde a linha ou o card
+                item.style.display = "none";
             }
         });
-    };
-}
+    }
+});
