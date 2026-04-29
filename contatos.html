@@ -3,49 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos CRAS - Belo Horizonte</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contatos - Guia Social</title>
+    <link rel="stylesheet" href="style.css"> <!-- Importante para manter o visual! -->
 </head>
 <body>
-<nav>
-    <a href="index.html">Início</a>
-    <a href="contatos.html">Contatos CRAS</a>
-</nav>
-
     <header>
-        <h1>CRAS por Regional</h1>
-        <p>Belo Horizonte - Minas Gerais</p>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="contatos.html">Contatos CRAS</a>
+        </nav>
+        <h1>Contatos de Emergência e Serviços</h1>
+        <p>Encontre aqui os principais telefones e endereços úteis.</p>
     </header>
 
     <main>
-        <section>
-            <h2>Lista de Unidades</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Regional</th>
-                        <th>Exemplos de CRAS</th>
-                        <th>Telefone</th>
-                    </tr>
-                </thead>
-                <tbody>
-    <tr><td><strong>Barreiro</strong></td><td>Barreiro / Vila Copacabana</td><td><a href="tel:3132775899">(31) 3277-5899</a></td></tr>
-    <tr><td><strong>Centro-Sul</strong></td><td>Santa Rita de Cássia</td><td><a href="tel:3132774363">(31) 3277-4363</a></td></tr>
-    <tr><td><strong>Leste</strong></td><td>Alto Vera Cruz / Taquaril</td><td><a href="tel:3132775640">(31) 3277-5640</a></td></tr>
-    <tr><td><strong>Nordeste</strong></td><td>Paulo VI / São Paulo</td><td><a href="tel:3132776228">(31) 3277-6228</a></td></tr>
-    <tr><td><strong>Noroeste</strong></td><td>Lagoinha / Sr. dos Passos</td><td><a href="tel:3132777615">(31) 3277-7615</a></td></tr>
-    <tr><td><strong>Norte</strong></td><td>Novo Aarão Reis / Zilah Spósito</td><td><a href="tel:3132777427">(31) 3277-7427</a></td></tr>
-    <tr><td><strong>Oeste</strong></td><td>Morro das Pedras / Havai</td><td><a href="tel:3132777013">(31) 3277-7013</a></td></tr>
-    <tr><td><strong>Pampulha</strong></td><td>Santa Rosa / São José</td><td><a href="tel:3132777856">(31) 3277-7856</a></td></tr>
-    <tr><td><strong>Venda Nova</strong></td><td>Lagoa / Mantiqueira</td><td><a href="tel:3132775509">(31) 3277-5509</a></td></tr>
-</tbody>
-
-            </table>
+        <!-- Vamos usar a mesma classe dos cards para manter o padrão -->
+        <section class="card-servico">
+            <h2>CRAS - Centro de Referência</h2>
+            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+            <p><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro</p>
+            <a href="tel:0800" class="botao-contato">Ligar Agora</a>
         </section>
-        <br>
-        <div style="text-align: center;">
-            <a href="index.html" class="botao">Voltar para o Início</a>
-        </div>
+
+        <section class="card-servico">
+            <h2>CREAS - Proteção Especial</h2>
+            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+            <p><strong>Horário:</strong> 08:00 às 17:00</p>
+        </section>
     </main>
 
     <footer>
