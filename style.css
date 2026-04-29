@@ -53,13 +53,26 @@ tr:nth-child(even) {
     display: inline-block;
     margin-top: 20px;
 /* Estilizando os botões para ficarem suaves */
-.botao-link, button, .portal-button { 
-    border-radius: 12px; /* Deixa as pontas arredondadas */
-    padding: 12px 20px;
-    transition: transform 0.2s, background-color 0.2s;
+.botao {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white !important;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 12px;
     font-weight: bold;
+    transition: transform 0.2s;
+    text-align: center;
     border: none;
     cursor: pointer;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+    background-color: #004494;
+}
+
 }
 /* Estilizando os botões que você criou com a classe "botao" */
 .botao {
