@@ -1,34 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const campoBusca = document.querySelector('#inputBusca');
-    const cards = document.querySelectorAll('.card-servico');
-
-    campoBusca.addEventListener('input', () => {
-        const valorBusca = campoBusca.value.trim(); // Pega o que foi digitado
-        const termoRegExp = new RegExp(`(${valorBusca})`, 'gi'); // Cria uma regra para achar a palavra
+document.addEventListener('input', (e) => {
+    if (e.target.id === 'inputBusca') {
+        const valorBusca = e.target.value.trim();
+        const cards = document.querySelectorAll('.card-servico');
 
         cards.forEach(card => {
-            // 1. Primeiro, removemos marcações antigas para não bagunçar
-            // Pegamos o texto puro, sem as tags de marca-texto
-            if (!card.dataset.original) {
-                card.dataset.original = card.innerHTML; 
+            // Salva o texto original na primeira vez para não perder as informações
+            if (!card.getAttribute('data-original')) {
+                card.setAttribute('data-original', card.innerHTML);
             }
-            let textoOriginal = card.dataset.original;
 
-            if (valorBusca !== "" && textoOriginal.toLowerCase().includes(valorBusca.toLowerCase())) {
-                card.style.display = "block";
+            const textoOriginal = card.getAttribute('data-original');
+
+            if (valorBusca !== "") {
+                const expressao = new RegExp(`(${valorBusca})`, 'gi');
                 
-                // 2. A MÁGICA: Substitui a palavra pelo texto com a tag <mark>
-                card.innerHTML = textoOriginal.replace(termoRegExp, '<mark style="background-color: yellow; color: black;">$1</mark>');
-                
-                // Remove o fundo amarelo do card inteiro que tínhamos antes
-                card.style.backgroundColor = ""; 
-                card.style.border = "";
-            } else if (valorBusca === "") {
-                card.style.display = "block";
-                card.innerHTML = textoOriginal; // Volta o texto ao normal
+                // Se a palavra existe no texto
+                if (textoOriginal.toLowerCase().includes(valorBusca.toLowerCase())) {
+                    card.style.display = "block";
+                    // Troca a palavra pela palavra envolvida na tag <mark>
+                    card.innerHTML = textoOriginal.replace(expressao, '<mark style="background-color: yellow; color: black; padding: 2px; border-radius: 3px;">$1</mark>');
+                } else {
+                    card.style.display = "none";
+                }
             } else {
-                card.style.display = "none";
+                // Se a busca estiver vazia, volta tudo ao normal
+                card.style.display = "block";
+                card.innerHTML = textoOriginal;
             }
         });
-    });
+    }
 });
