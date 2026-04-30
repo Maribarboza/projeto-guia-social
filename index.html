@@ -1,81 +1,133 @@
-<DOCTYPE html>
-  <html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta name="description" content="Guia de acesso aos direitos sociais em BH. Encontre telefones do CRAS, regras do BPC e Bolsa Família.">
-<meta name="keywords" content="CRAS BH, BPC renda, Bolsa Família, Assistência Social Belo Horizonte">
+  <meta charset="UTF-8">
+  <title>Guia Social</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
 
-  <meta charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Direitos Sociais - Mariana Barboza</title>
-    <link rel="stylesheet" href="style.css">
-    <body>
-    <header>
-        <nav>
-            <a href="index.html" class="ativo">Início</a>
-            <a href="contatos.html">Contatos</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
-        <h1>Guia de Acesso aos Direitos Sociais</h1>
-        <p>Facilitando a informação para quem mais precisa.</p>
-    </header>
+    header {
+      background: #1e88e5;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
 
-<div style="text-align: center; margin: 20px;">
-    <input type="text" 
-id="inputBusca" placeholder="Digite para buscar (ex: CRAS, Bolsa...)" 
-    style="padding: 10px; width: 80%; border-radius: 5px; border: 1px solid #ccc;">
-</div>
-   </header>
-    
-    <main>
-        <section class="card-servico">
-            <h2> O que é este projeto?</h2>
-            <p> Sou Mariana Barboza, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sobre CRAS, CREAS e benefícios sociais de forma simples.</p>
-<section class="card-servico faq-secao">
-    <h2>Dúvidas Frequentes</h2>
-    
-    <details>
-        <summary>O que levar para o atendimento no CRAS?</summary>
-        <p>Geralmente é necessário levar CPF, RG, comprovante de residência e a carteira de trabalho de todos que moram na casa.</p>
-    </details>
+    nav {
+      background: #1565c0;
+      padding: 10px;
+      text-align: center;
+    }
 
-    <details>
-        <summary>Como sei qual é a minha Regional?</summary>
-        <p>A regional é definida pelo seu endereço. Você pode conferir na aba de "Contatos" deste site qual CRAS atende o seu bairro.</p>
-    </details>
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-    <details>
-        <summary>O atendimento no CRAS é gratuito?</summary>
-        <p>Sim, todos os atendimentos e serviços prestados pelo CRAS são totalmente gratuitos para o cidadão.</p>
-    </details>
+    .hero {
+      padding: 50px;
+      text-align: center;
+      background: white;
+    }
 
-     </section>
+    .hero h1 {
+      color: #1e88e5;
+    }
 
-    <!-- Link para a página de contatos -->
-    <p style="text-align: center; margin-top: 30px;">
-        <a href="contatos.html" style="color: #0056b3; font-weight: bold; text-decoration: none;">Clique aqui para ver a lista de contatos</a>
-    </p>
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #1e88e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
 
-    <!-- Seus botões pílula centralizados -->
-    <div class="botoes-container">
-        <a href="https://www.gov.br" target="_blank" class="botao">Portal do MDS</a>
-        <a href="https://www.gov.br" target="_blank" class="botao">Cadastro Único</a>
+    .section {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #1e88e5;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Guia Social</h1>
+</header>
+
+<nav>
+  <a href="#">Início</a>
+  <a href="#">Serviços</a>
+  <a href="#">Como acessar</a>
+  <a href="#">Sobre</a>
+  <a href="#">Contato</a>
+</nav>
+
+<section class="hero">
+  <h1>Encontre seus direitos sociais</h1>
+  <p>Informações simples para acessar benefícios e serviços públicos</p>
+  <a href="#" class="btn">Ver benefícios</a>
+  <a href="#" class="btn">Como acessar</a>
+</section>
+
+<section class="section">
+  <h2>Principais serviços</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Bolsa Família</h3>
+      <p>Saiba quem tem direito e como receber</p>
     </div>
 
-</main>
+    <div class="card">
+      <h3>Cadastro Único</h3>
+      <p>Veja como se cadastrar e atualizar dados</p>
+    </div>
+
+    <div class="card">
+      <h3>CRAS</h3>
+      <p>Descubra onde buscar atendimento social</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Como acessar</h2>
+  <p>Vá até o CRAS com seus documentos e faça seu cadastro.</p>
+</section>
 
 <footer>
-    <p>Desenvolvido com ❤️ por <b>Mariana Luiza Mendes Barboza</b></p>
-    <p>UX Designer & Desenvolvedora Front-end</p>
-    <div class="copyright">
-        © <span id="ano-atual"></span> Guia Social - Informação para quem mais precisa.
-    </div>
+  <p>Projeto Guia Social - Informações para todos</p>
 </footer>
-    </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
-
-
-
-
-
