@@ -281,3 +281,30 @@ header h1 {
     margin-top: 20px;     /* Garante que o título tenha seu próprio espaço */
 }
 
+.servicos-rapidos {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Importante para o celular */
+    justify-content: center;
+}
+
+.card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito suave de elevação */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
