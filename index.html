@@ -1,97 +1,129 @@
-<DOCTYPE html>
-  <html lang="pt-br">
+ <!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta name="description" content="Guia de acesso aos direitos sociais em BH. Encontre telefones do CRAS, regras do BPC e Bolsa Família.">
-<meta name="keywords" content="CRAS BH, BPC renda, Bolsa Família, Assistência Social Belo Horizonte">
-
-  <meta charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Direitos Sociais - Mariana Barboza</title>
-    <link rel="stylesheet" href="style.css">
-    <body>
+    
+    <style>
+        /* CONFIGURAÇÃO GERAL */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+
+        /* CABEÇALHO AZUL (IGUAL À SUA FOTO) */
+        header { background-color: #0044cc; color: white; text-align: center; padding: 50px 20px; }
+        header h1 { font-size: 2.2rem; margin-bottom: 15px; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* MENU DE NAVEGAÇÃO */
+        nav { background-color: #003399; padding: 12px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+
+        /* BARRA DE BUSCA */
+        .search-box { margin-top: 25px; }
+        .search-box input { padding: 12px; width: 90%; max-width: 450px; border-radius: 8px; border: none; font-size: 1rem; }
+
+        /* SEÇÃO DE CARDS (O QUE ESTAVA BAGUNÇADO) */
+        .servicos-rapidos { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            padding: 40px 20px; 
+            flex-wrap: wrap; 
+        }
+        .card { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            width: 280px; 
+            text-align: center; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card .icon { font-size: 40px; display: block; margin-bottom: 10px; }
+        .card h3 { color: #0044cc; margin-bottom: 10px; }
+        .card a { display: inline-block; margin-top: 15px; color: #0044cc; font-weight: bold; text-decoration: none; }
+
+        /* CONTEÚDO PRINCIPAL (SOBRE E FAQ) */
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .info-section { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+        .info-section h2 { margin-bottom: 15px; color: #333; }
+
+        /* PERGUNTAS FREQUENTES (ACORDEÃO) */
+        details { background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid #eee; }
+        summary { font-weight: bold; color: #0044cc; }
+
+        /* RODAPÉ */
+        footer { background-color: #003399; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        footer a { color: #a3c2ff; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="contatos.html">Contatos CRAS</a>
+    </nav>
+
     <header>
-        <nav>
-            <a href="index.html" class="ativo">Início</a>
-            <a href="contatos.html">Contatos</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
         <h1>Guia de Acesso aos Direitos Sociais</h1>
         <p>Facilitando a informação para quem mais precisa.</p>
+        <div class="search-box">
+            <input type="text" placeholder="Digite para buscar (ex: CRAS, Bolsa...)">
+        </div>
     </header>
 
-<div style="text-align: center; margin: 20px;">
-    <input type="text" 
-id="inputBusca" placeholder="Digite para buscar (ex: CRAS, Bolsa...)" 
-    style="padding: 10px; width: 80%; border-radius: 5px; border: 1px solid #ccc;">
-</div>
-   </header>
-    
-    <main>
-        <section class="card-servico">
-            <h2> O que é este projeto?</h2>
-<section class="servicos-rapidos">
-    <div class="card">
-        <span class="icon">📍</span>
-        <h3>CRAS</h3>
-        <p>Proteção básica e cadastro único.</p>
-        <a href="#contatos-cras" class="link-card">Ver unidades</a>
-    </div>
-    <div class="card">
-        <span class="icon">🛡️</span>
-        <h3>CREAS</h3>
-        <p>Apoio em situações de violação de direitos.</p>
-        <a href="#" class="link-card">Saiba mais</a>
-    </div>
-    <div class="card">
-        <span class="icon">💰</span>
-        <h3>Benefícios</h3>
-        <p>Informações sobre Bolsa Família e BPC.</p>
-        <a href="#" class="link-card">Como solicitar</a>
-    </div>
-</section>
+    <section class="servicos-rapidos">
+        <div class="card">
+            <span class="icon">📍</span>
+            <h3>CRAS</h3>
+            <p>Proteção básica e Cadastro Único para programas sociais.</p>
+            <a href="contatos.html">Ver unidades</a>
+        </div>
 
-            <p> Sou Mariana Barboza, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sobre CRAS, CREAS e benefícios sociais de forma simples.</p>
-<section class="card-servico faq-secao">
-    <h2>Dúvidas Frequentes</h2>
-    
-    <details>
-        <summary>O que levar para o atendimento no CRAS?</summary>
-        <p>Geralmente é necessário levar CPF, RG, comprovante de residência e a carteira de trabalho de todos que moram na casa.</p>
-    </details>
+        <div class="card">
+            <span class="icon">🛡️</span>
+            <h3>CREAS</h3>
+            <p>Apoio especializado para violação de direitos e violência.</p>
+            <a href="#">Saiba mais</a>
+        </div>
 
-    <details>
-        <summary>Como sei qual é a minha Regional?</summary>
-        <p>A regional é definida pelo seu endereço. Você pode conferir na aba de "Contatos" deste site qual CRAS atende o seu bairro.</p>
-    </details>
+        <div class="card">
+            <span class="icon">💰</span>
+            <h3>Benefícios</h3>
+            <p>Informações sobre Bolsa Família, BPC e auxílios.</p>
+            <a href="#">Como solicitar</a>
+        </div>
+    </section>
 
-    <details>
-        <summary>O atendimento no CRAS é gratuito?</summary>
-        <p>Sim, todos os atendimentos e serviços prestados pelo CRAS são totalmente gratuitos para o cidadão.</p>
-    </details>
+    <div class="container">
+        <section class="info-section">
+            <h2>O que é este projeto?</h2>
+            <p>Sou Mariana Barboza, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sobre CRAS, CREAS e benefícios sociais de forma simples e acessível.</p>
+        </section>
 
-     </section>
-
-    <!-- Link para a página de contatos -->
-    <p style="text-align: center; margin-top: 30px;">
-        <a href="contatos.html" style="color: #0056b3; font-weight: bold; text-decoration: none;">Clique aqui para ver a lista de contatos</a>
-    </p>
-
-    <!-- Seus botões pílula centralizados -->
-    <div class="botoes-container">
-        <a href="https://www.gov.br" target="_blank" class="botao">Portal do MDS</a>
-        <a href="https://www.gov.br" target="_blank" class="botao">Cadastro Único</a>
+        <section class="info-section">
+            <h2>Dúvidas Frequentes</h2>
+            <details>
+                <summary>O que levar para o atendimento no CRAS?</summary>
+                <p>Documentos originais de todos da casa: RG, CPF, Carteira de Trabalho e Comprovante de Residência.</p>
+            </details>
+            <details>
+                <summary>Como sei qual é a minha Regional?</summary>
+                <p>O atendimento é por território. Verifique na nossa lista de contatos qual unidade atende o seu bairro.</p>
+            </details>
+        </section>
     </div>
 
-</main>
+    <footer>
+        <p>Guia de Acesso aos Direitos Sociais - Desenvolvido por Mariana Barboza</p>
+        <p>
+            <a href="https://github.com/Maribarboza" target="_blank">GitHub</a> | 
+            <a href="#" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
 
-<footer style="background-color: #0044cc; color: white; text-align: center; padding: 20px; margin-top: 40px;">
-    <p>Guia de Acesso aos Direitos Sociais - Desenvolvido por Mariana Barboza</p>
-    <div>
-        <a href="https://github.com/Maribarboza" target="_blank" style="color: white; margin: 0 10px;">GitHub</a> | 
-        <a href="https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav" target="_blank" style="color: white; margin: 0 10px;">LinkedIn</a>
-    </div>
-</footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
