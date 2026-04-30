@@ -18,7 +18,7 @@ O Guia Social é uma plataforma que ajuda pessoas a encontrar projetos sociais, 
 2. Abra o index.html
 
 ## 📷 Preview
-(coloque print aqui)
+
 
 ## 📌 Futuras melhorias
 - Login de usuários
