@@ -42,8 +42,9 @@
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); 
         }
         .modal-content { 
-            background-color: white; margin: 15% auto; padding: 30px; 
-            border-radius: 15px; width: 85%; max-width: 500px; position: relative; 
+            background-color: white; margin: 5% auto; padding: 30px; 
+            border-radius: 15px; width: 90%; max-width: 600px; position: relative;
+            max-height: 85vh; overflow-y: auto;
         }
         .fechar { position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; }
 
@@ -53,13 +54,18 @@
         details { background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; }
         
         footer { background: #003399; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        
+        /* Estilo para listas dentro do modal */
+        .lista-contatos { text-align: left; margin-top: 15px; list-style: none; }
+        .lista-contatos li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .lista-contatos strong { color: #0044cc; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Contatos CRAS</a>
+        <a href="index.html">Início</a>
+        <a href="https://maribarboza.github.io/projeto-guia-social/contatos.html">Contatos CRAS</a>
     </nav>
 
     <header>
@@ -74,39 +80,49 @@
         <div class="card">
             <span class="icon">📍</span>
             <h3>CRAS</h3>
-            <p>Proteção básica e Cadastro Único.</p>
-            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Saiba mais</button>
+            <p>Proteção básica e Cadastro Único para programas sociais.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Ver Unidades e Info</button>
         </div>
 
         <div class="card">
             <span class="icon">🛡️</span>
             <h3>CREAS</h3>
-            <p>Apoio em situações de violação.</p>
-            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Saiba mais</button>
+            <p>Apoio especializado para violação de direitos e violência.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Ver Detalhes</button>
         </div>
     </section>
 
-    <!-- JANELAS INFORMATIVAS (MODAIS) -->
+    <!-- JANELA CRAS COM SEUS DADOS ORIGINAIS -->
     <div id="modalCras" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCras')">&times;</span>
-            <h2>Sobre o CRAS</h2><br>
-            <p>O <b>CRAS</b> é a porta de entrada da Assistência Social. É onde você faz o <b>Cadastro Único</b>, solicita o <b>Bolsa Família</b> e recebe acompanhamento para sua família.</p>
+            <h2>Centro de Referência (CRAS)</h2><br>
+            <p>O <b>CRAS</b> é onde você faz o <b>Cadastro Único</b> e solicita o <b>Bolsa Família</b>.</p>
+            
+            <ul class="lista-contatos">
+                <li><strong>Regional Sede:</strong> Rua José de Alencar, 123 - Centro | Tel: (11) 4002-8922</li>
+                <li><strong>Regional Norte:</strong> Av. das Flores, 450 - Vila Nova | Tel: (11) 4002-8923</li>
+                <li><strong>Regional Sul:</strong> Praça da Paz, s/n - Jardim Sul | Tel: (11) 4002-8924</li>
+            </ul>
         </div>
     </div>
 
+    <!-- JANELA CREAS -->
     <div id="modalCreas" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCreas')">&times;</span>
-            <h2>Sobre o CREAS</h2><br>
-            <p>O <b>CREAS</b> oferece apoio especializado para famílias em situação de risco ou que tiveram direitos violados, como casos de violência ou abandono.</p>
+            <h2>Centro Especializado (CREAS)</h2><br>
+            <p>Atendimento para casos de violência, negligência ou abandono.</p>
+            <ul class="lista-contatos">
+                <li><strong>Unidade Central:</strong> Rua da Esperança, 88 | Tel: (11) 4005-1010</li>
+            </ul>
         </div>
     </div>
 
     <div class="container">
         <section class="info-section">
             <h2>O que é este projeto?</h2>
-            <p>Sou Mariana Barboza, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sociais de forma simples.</p>
+            <p>Sou <strong>Mariana Barboza</strong>, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sobre CRAS, CREAS e benefícios sociais de forma simples.</p>
         </section>
 
         <section class="info-section">
@@ -115,11 +131,16 @@
                 <summary>O que levar para o atendimento no CRAS?</summary>
                 <p>Documentos originais de todos da casa: RG, CPF, Carteira de Trabalho e Comprovante de Residência.</p>
             </details>
+            <details>
+                <summary>Como sei qual é a minha Regional?</summary>
+                <p>O atendimento é por território. Verifique na nossa lista de contatos qual unidade atende o seu bairro.</p>
+            </details>
         </section>
     </div>
 
     <footer>
-        <p>Guia Social - Desenvolvido por Mariana Barboza</p>
+        <p>Guia de Acesso aos Direitos Sociais - Desenvolvido por Mariana Barboza</p>
+        <p><small>Assistente Social e Desenvolvedora</small></p>
     </footer>
 
     <script>
