@@ -4,46 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Direitos Sociais - Mariana Barboza</title>
-    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
-
-        header { background-color: #0044cc; color: white; text-align: center; padding: 50px 20px; }
+        header { background-color: #0044cc; color: white; text-align: center; padding: 40px 20px; }
         nav { background-color: #003399; padding: 12px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-
-        .search-box { margin-top: 25px; }
-        .search-box input { padding: 12px; width: 90%; max-width: 450px; border-radius: 8px; border: none; font-size: 1rem; }
-
         .servicos-rapidos { display: flex; justify-content: center; gap: 20px; padding: 40px 20px; flex-wrap: wrap; }
-        .card { 
-            background: white; padding: 25px; border-radius: 12px; width: 280px; 
-            text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; 
-        }
+        .card { background: white; padding: 25px; border-radius: 12px; width: 280px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-saiba-mais { background-color: #0044cc; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 15px; }
         
-        .btn-saiba-mais {
-            background-color: #0044cc; color: white; border: none; padding: 10px 20px;
-            border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 15px;
-        }
-
-        .modal { 
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); 
-        }
-        .modal-content { 
-            background-color: white; margin: 5% auto; padding: 30px; 
-            border-radius: 15px; width: 95%; max-width: 800px; position: relative;
-            max-height: 85vh; overflow-y: auto;
-        }
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); }
+        .modal-content { background-color: white; margin: 5% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 800px; position: relative; max-height: 85vh; overflow-y: auto; }
         .fechar { position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; }
-
-        .regional-group { margin-bottom: 25px; border-bottom: 2px solid #0044cc; padding-bottom: 10px; }
-        .regional-title { color: #0044cc; font-size: 1.3rem; margin-bottom: 10px; text-transform: uppercase; font-weight: bold; }
-        .unidade-item { margin-bottom: 15px; padding-left: 10px; border-left: 3px solid #ddd; }
-
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        footer { background: #003399; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        
+        /* ORGANIZAÇÃO POR REGIONAL */
+        .regional-section { margin-bottom: 25px; border-bottom: 2px solid #0044cc; padding-bottom: 10px; text-align: left; }
+        .regional-title { color: #0044cc; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 10px; font-weight: bold; }
+        .unidade-info { margin-bottom: 10px; padding-left: 10px; border-left: 3px solid #ddd; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -55,74 +34,81 @@
 
     <header>
         <h1>Guia de Acesso aos Direitos Sociais</h1>
-        <p>Informações completas por todas as regionais de Belo Horizonte.</p>
-        <div class="search-box">
-            <input type="text" placeholder="Busque por bairro ou regional...">
-        </div>
+        <p>Belo Horizonte - Todas as Regionais</p>
     </header>
 
     <section class="servicos-rapidos">
         <div class="card">
             <span style="font-size:40px">📍</span>
             <h3>CRAS</h3>
-            <p>Encontre a unidade CRAS da sua região.</p>
-            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Ver Regionais BH</button>
+            <p>Unidades de proteção básica em BH.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Ver Endereços BH</button>
         </div>
-
         <div class="card">
             <span style="font-size:40px">🛡️</span>
             <h3>CREAS</h3>
-            <p>Atendimento especializado em BH.</p>
-            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Ver Regionais BH</button>
+            <p>Unidades especializadas em BH.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Ver Endereços BH</button>
         </div>
     </section>
 
-    <!-- MODAL CRAS COM TODAS AS REGIONAIS -->
+    <!-- MODAL CRAS COMPLETO BH -->
     <div id="modalCras" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCras')">&times;</span>
-            <h2>Unidades CRAS por Regional (BH)</h2><br>
+            <h2>CRAS - Unidades por Regional</h2><br>
 
-            <div class="regional-group"><h3 class="regional-title">Barreiro</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Centro-Sul</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Leste</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Nordeste</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Noroeste</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Norte</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Oeste</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Pampulha</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Venda Nova</h3><div class="unidade-item">Endereço e Telefone aqui...</div></div>
+            <div class="regional-section">
+                <div class="regional-title">Barreiro</div>
+                <div class="unidade-info"><strong>CRAS Barreiro:</strong> Rua Pinheiro Chagas, 237 - Barreiro | (31) 3277-5899</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Centro-Sul</div>
+                <div class="unidade-info"><strong>CRAS Centro-Sul:</strong> Rua Tupis, 149 - Centro | (31) 3277-4950</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Leste</div>
+                <div class="unidade-info"><strong>CRAS Leste:</strong> Rua Salinas, 1447 - Santa Tereza | (31) 3277-4400</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Nordeste</div>
+                <div class="unidade-info"><strong>CRAS Nordeste:</strong> Rua Queluzita, 45 - São Gabriel | (31) 3277-5111</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Noroeste</div>
+                <div class="unidade-info"><strong>CRAS Noroeste:</strong> Rua Peçanha, 144 - Carlos Prates | (31) 3277-7611</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Norte</div>
+                <div class="unidade-info"><strong>CRAS Norte:</strong> Rua Pastor Murilo Cassete, 85 - São Bernardo | (31) 3277-6222</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Oeste</div>
+                <div class="unidade-info"><strong>CRAS Oeste:</strong> Avenida Silva Lobo, 1280 - Nova Granada | (31) 3277-7001</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Pampulha</div>
+                <div class="unidade-info"><strong>CRAS Pampulha:</strong> Avenida Antônio Carlos, 7596 - São Luís | (31) 3277-7888</div>
+            </div>
+            <div class="regional-section">
+                <div class="regional-title">Venda Nova</div>
+                <div class="unidade-info"><strong>CRAS Venda Nova:</strong> Rua Padre Pedro Pinto, 1055 - Venda Nova | (31) 3277-5444</div>
+            </div>
         </div>
     </div>
 
-    <!-- MODAL CREAS COM TODAS AS REGIONAIS -->
+    <!-- MODAL CREAS COMPLETO BH -->
     <div id="modalCreas" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCreas')">&times;</span>
-            <h2>Unidades CREAS por Regional (BH)</h2><br>
-
-            <div class="regional-group"><h3 class="regional-title">Barreiro</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Centro-Sul</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Leste</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Nordeste</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Noroeste</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Norte</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Oeste</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Pampulha</h3><div class="unidade-item">Info aqui...</div></div>
-            <div class="regional-group"><h3 class="regional-title">Venda Nova</h3><div class="unidade-item">Info aqui...</div></div>
+            <h2>CREAS - Unidades por Regional</h2><br>
+            <div class="regional-section">
+                <div class="regional-title">Regional BH</div>
+                <div class="unidade-info"><strong>CREAS Sede:</strong> Avenida Augusto de Lima, 1491 - Barro Preto | (31) 3277-4555</div>
+                <div class="unidade-info"><strong>CREAS Leste:</strong> Rua Anhanguera, 240 - Santa Efigênia | (31) 3277-4402</div>
+            </div>
         </div>
     </div>
-
-    <div class="container">
-        <section class="info-section">
-            <h2>O que é este projeto?</h2>
-            <p>Desenvolvido por Mariana Barboza, Assistente Social. O objetivo é centralizar o acesso aos serviços da rede socioassistencial de Belo Horizonte.</p>
-        </section>
-    </div>
-
-    <footer>
-        <p>Guia Social BH - Mariana Barboza</p>
-    </footer>
 
     <script>
         function abrirModal(id) { document.getElementById(id).style.display = "block"; }
