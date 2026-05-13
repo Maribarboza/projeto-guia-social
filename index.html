@@ -10,54 +10,47 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
 
-        /* CABEÇALHO AZUL */
+        /* CABEÇALHO E NAV */
         header { background-color: #0044cc; color: white; text-align: center; padding: 50px 20px; }
-        header h1 { font-size: 2.2rem; margin-bottom: 15px; }
-
-        /* NAVEGAÇÃO */
         nav { background-color: #003399; padding: 12px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
 
-        /* BARRA DE BUSCA */
+        /* BUSCA */
         .search-box { margin-top: 25px; }
         .search-box input { padding: 12px; width: 90%; max-width: 450px; border-radius: 8px; border: none; font-size: 1rem; }
 
-        /* SEÇÃO DE CARDS */
+        /* CARDS */
         .servicos-rapidos { display: flex; justify-content: center; gap: 20px; padding: 40px 20px; flex-wrap: wrap; }
         .card { 
             background: white; padding: 25px; border-radius: 12px; width: 280px; 
             text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; 
         }
-        .card:hover { transform: translateY(-5px); }
-        .card .icon { font-size: 40px; display: block; margin-bottom: 10px; }
-        
         .btn-saiba-mais {
             background-color: #0044cc; color: white; border: none; padding: 10px 20px;
             border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 15px;
         }
 
-        /* ESTILO DAS JANELAS (MODAIS) */
+        /* MODAIS ORGANIZADOS */
         .modal { 
             display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
             width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); 
         }
         .modal-content { 
             background-color: white; margin: 5% auto; padding: 30px; 
-            border-radius: 15px; width: 90%; max-width: 600px; position: relative;
-            max-height: 80vh; overflow-y: auto;
+            border-radius: 15px; width: 95%; max-width: 800px; position: relative;
+            max-height: 85vh; overflow-y: auto;
         }
         .fechar { position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; }
 
-        /* CONTEÚDO */
+        /* ESTILO DAS REGIONAIS */
+        .regional-group { margin-bottom: 25px; border-bottom: 2px solid #0044cc; padding-bottom: 10px; }
+        .regional-title { color: #0044cc; font-size: 1.3rem; margin-bottom: 10px; text-transform: uppercase; }
+        .unidade-item { margin-bottom: 15px; padding-left: 10px; border-left: 3px solid #ddd; }
+        .unidade-item strong { display: block; color: #555; }
+
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         .info-section { background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; }
-        details { background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; }
-        
         footer { background: #003399; color: white; text-align: center; padding: 30px; margin-top: 50px; }
-        
-        .lista-contatos { text-align: left; margin-top: 15px; list-style: none; }
-        .lista-contatos li { margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
-        .lista-contatos strong { color: #0044cc; display: block; }
     </style>
 </head>
 <body>
@@ -69,88 +62,99 @@
 
     <header>
         <h1>Guia de Acesso aos Direitos Sociais</h1>
-        <p>Facilitando a informação para quem mais precisa em Belo Horizonte.</p>
+        <p>Informações completas por regional em Belo Horizonte.</p>
         <div class="search-box">
-            <input type="text" placeholder="Digite para buscar (ex: CRAS, Bolsa...)">
+            <input type="text" placeholder="Busque por bairro ou regional...">
         </div>
     </header>
 
     <section class="servicos-rapidos">
         <div class="card">
-            <span class="icon">📍</span>
+            <span style="font-size:40px">📍</span>
             <h3>CRAS</h3>
-            <p>Proteção básica e Cadastro Único em BH.</p>
-            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Ver Unidades BH</button>
+            <p>Unidades organizadas por Regional em BH.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Ver Regionais</button>
         </div>
 
         <div class="card">
-            <span class="icon">🛡️</span>
+            <span style="font-size:40px">🛡️</span>
             <h3>CREAS</h3>
-            <p>Apoio especializado para violação de direitos em BH.</p>
-            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Ver Detalhes</button>
+            <p>Apoio especializado em Belo Horizonte.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Ver Regionais</button>
         </div>
     </section>
 
-    <!-- JANELA CRAS - DADOS DE BELO HORIZONTE RESTAURADOS -->
+    <!-- MODAL CRAS ORGANIZADO POR REGIONAL -->
     <div id="modalCras" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCras')">&times;</span>
-            <h2>CRAS - Unidades Belo Horizonte</h2><br>
-            <p>Confira os principais endereços e contatos:</p>
-            
-            <ul class="lista-contatos">
-                <li><strong>CRAS Centro-Sul</strong> Rua Tupis, 149 - Centro | Tel: (31) 3277-4950</li>
-                <li><strong>CRAS Barreiro</strong> Rua Pinheiro Chagas, 237 - Barreiro | Tel: (31) 3277-5899</li>
-                <li><strong>CRAS Venda Nova</strong> Rua Padre Pedro Pinto, 1055 - Venda Nova | Tel: (31) 3277-5444</li>
-                <li><strong>CRAS Leste</strong> Rua Salinas, 1447 - Santa Tereza | Tel: (31) 3277-4400</li>
-            </ul>
+            <h2>Unidades CRAS por Regional (BH)</h2><br>
+
+            <div class="regional-group">
+                <h3 class="regional-title">Barreiro</h3>
+                <div class="unidade-item">
+                    <strong>CRAS Barreiro</strong> Rua Pinheiro Chagas, 237 - Barreiro | (31) 3277-5899
+                </div>
+                <div class="unidade-item">
+                    <strong>CRAS Vila Pinho</strong> Rua Coletora, 440 - Vila Pinho | (31) 3277-5933
+                </div>
+            </div>
+
+            <div class="regional-group">
+                <h3 class="regional-title">Centro-Sul</h3>
+                <div class="unidade-item">
+                    <strong>CRAS Vila Antena</strong> Rua Central, 122 - Vila Antena | (31) 3277-4950
+                </div>
+            </div>
+
+            <div class="regional-group">
+                <h3 class="regional-title">Venda Nova</h3>
+                <div class="unidade-item">
+                    <strong>CRAS Venda Nova</strong> Rua Padre Pedro Pinto, 1055 - Venda Nova | (31) 3277-5444
+                </div>
+            </div>
+
+            <p><small>* Consulte a lista completa na página de contatos para todas as 34 unidades.</small></p>
         </div>
     </div>
 
-    <!-- JANELA CREAS - DADOS DE BELO HORIZONTE RESTAURADOS -->
+    <!-- MODAL CREAS ORGANIZADO POR REGIONAL -->
     <div id="modalCreas" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCreas')">&times;</span>
-            <h2>CREAS - Belo Horizonte</h2><br>
-            <p>Unidades para atendimento especializado:</p>
-            <ul class="lista-contatos">
-                <li><strong>CREAS Centro-Sul</strong> Avenida Augusto de Lima, 1491 - Barro Preto | Tel: (31) 3277-4555</li>
-                <li><strong>CREAS Noroeste</strong> Rua Peçanha, 144 - Carlos Prates | Tel: (31) 3277-7611</li>
-            </ul>
+            <h2>Unidades CREAS por Regional (BH)</h2><br>
+
+            <div class="regional-group">
+                <h3 class="regional-title">Regional Oeste</h3>
+                <div class="unidade-item">
+                    <strong>CREAS Oeste</strong> Av. Silva Lobo, 1280 - Nova Granada | (31) 3277-7001
+                </div>
+            </div>
+
+            <div class="regional-group">
+                <h3 class="regional-title">Regional Noroeste</h3>
+                <div class="unidade-item">
+                    <strong>CREAS Noroeste</strong> Rua Peçanha, 144 - Carlos Prates | (31) 3277-7611
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="container">
         <section class="info-section">
-            <h2>O que é este projeto?</h2>
-            <p>Sou <strong>Mariana Barboza</strong>, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos de Belo Horizonte e região a encontrarem informações sobre CRAS, CREAS e benefícios sociais de forma simples.</p>
-        </section>
-
-        <section class="info-section">
-            <h2>Dúvidas Frequentes</h2>
-            <details>
-                <summary>O que levar para o atendimento no CRAS?</summary>
-                <p>Documentos originais de todos da casa: RG, CPF, Carteira de Trabalho e Comprovante de Residência.</p>
-            </details>
+            <h2>Sobre a Organização Territorial</h2>
+            <p>O atendimento socioassistencial em Belo Horizonte é dividido por <strong>Regionais</strong>. É muito importante que o cidadão procure a unidade que atende o seu bairro de residência para garantir o acompanhamento correto.</p>
         </section>
     </div>
 
     <footer>
-        <p>Guia Social BH - Desenvolvido por Mariana Barboza</p>
+        <p>Guia Social BH - Mariana Barboza</p>
     </footer>
 
     <script>
-        function abrirModal(id) {
-            document.getElementById(id).style.display = "block";
-        }
-        function fecharModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target.className === "modal") {
-                event.target.style.display = "none";
-            }
-        }
+        function abrirModal(id) { document.getElementById(id).style.display = "block"; }
+        function fecharModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === "modal") { event.target.style.display = "none"; } }
     </script>
 
 </body>
