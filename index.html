@@ -1,54 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<style>
-    /* Estilo para a janelinha (Modal) */
-    .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1000; 
-        left: 0; top: 0; 
-        width: 100%; height: 100%; 
-        background-color: rgba(0,0,0,0.8); /* Fundo escuro */
-    }
-
-    .modal-content {
-        background-color: white;
-        margin: 15% auto;
-        padding: 30px;
-        border-radius: 15px;
-        width: 85%;
-        max-width: 500px;
-        position: relative;
-        text-align: left;
-    }
-
-    .fechar {
-        position: absolute;
-        top: 10px; right: 15px;
-        font-size: 28px;
-        cursor: pointer;
-        color: #333;
-    }
-
-    /* Botão que aparece no card */
-    .btn-card {
-        background-color: #0044cc;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-        margin-top: 15px;
-        transition: 0.3s;
-    }
-
-    .btn-card:hover {
-        background-color: #003399;
-    }
-</style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Direitos Sociais - Mariana Barboza</title>
@@ -56,103 +8,58 @@
     <style>
         /* CONFIGURAÇÃO GERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
 
-        /* CABEÇALHO AZUL (IGUAL À SUA FOTO) */
+        /* CABEÇALHO AZUL */
         header { background-color: #0044cc; color: white; text-align: center; padding: 50px 20px; }
         header h1 { font-size: 2.2rem; margin-bottom: 15px; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
 
-        /* MENU DE NAVEGAÇÃO */
+        /* NAVEGAÇÃO */
         nav { background-color: #003399; padding: 12px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
 
         /* BARRA DE BUSCA */
         .search-box { margin-top: 25px; }
         .search-box input { padding: 12px; width: 90%; max-width: 450px; border-radius: 8px; border: none; font-size: 1rem; }
 
-        /* SEÇÃO DE CARDS (O QUE ESTAVA BAGUNÇADO) */
-        .servicos-rapidos { 
-            display: flex; 
-            justify-content: center; 
-            gap: 20px; 
-            padding: 40px 20px; 
-            flex-wrap: wrap; 
-        }
+        /* SEÇÃO DE CARDS */
+        .servicos-rapidos { display: flex; justify-content: center; gap: 20px; padding: 40px 20px; flex-wrap: wrap; }
         .card { 
-            background: white; 
-            padding: 25px; 
-            border-radius: 12px; 
-            width: 280px; 
-            text-align: center; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            background: white; padding: 25px; border-radius: 12px; width: 280px; 
+            text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; 
         }
         .card:hover { transform: translateY(-5px); }
         .card .icon { font-size: 40px; display: block; margin-bottom: 10px; }
-        .card h3 { color: #0044cc; margin-bottom: 10px; }
-        .card a { display: inline-block; margin-top: 15px; color: #0044cc; font-weight: bold; text-decoration: none; }
+        
+        .btn-saiba-mais {
+            background-color: #0044cc; color: white; border: none; padding: 10px 20px;
+            border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 15px;
+        }
 
-        /* CONTEÚDO PRINCIPAL (SOBRE E FAQ) */
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        .info-section { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
-        .info-section h2 { margin-bottom: 15px; color: #333; }
+        /* ESTILO DAS JANELAS (MODAIS) */
+        .modal { 
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); 
+        }
+        .modal-content { 
+            background-color: white; margin: 15% auto; padding: 30px; 
+            border-radius: 15px; width: 85%; max-width: 500px; position: relative; 
+        }
+        .fechar { position: absolute; top: 10px; right: 15px; font-size: 28px; cursor: pointer; }
 
-        /* PERGUNTAS FREQUENTES (ACORDEÃO) */
-        details { background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid #eee; }
-        summary { font-weight: bold; color: #0044cc; }
-
-        /* RODAPÉ */
-        footer { background-color: #003399; color: white; text-align: center; padding: 30px; margin-top: 50px; }
-        footer a { color: #a3c2ff; text-decoration: none; margin: 0 10px; }
-  
-/* Estilo para as janelinhas (Modais) */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.7); /* Escurece o fundo */
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 25px;
-    border-radius: 12px;
-    width: 85%;
-    max-width: 450px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 15px; top: 10px;
-    font-size: 25px;
-    cursor: pointer;
-    color: #666;
-}
-
-/* Estilo do botão do card */
-.btn-info {
-    background-color: #0044cc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-  </style>
+        /* CONTEÚDO */
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .info-section { background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; }
+        details { background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; }
+        
+        footer { background: #003399; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+    </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Início</a>
-        <a href="contatos.html">Contatos CRAS</a>
+        <a href="#">Início</a>
+        <a href="#">Contatos CRAS</a>
     </nav>
 
     <header>
@@ -163,63 +70,43 @@
         </div>
     </header>
 
-    <<section class="servicos-rapidos" style="display: flex; justify-content: center; gap: 20px; padding: 40px 20px; flex-wrap: wrap;">
-    <!-- Card do CRAS -->
-    <div class="card" style="background: white; padding: 25px; border-radius: 12px; width: 280px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <span style="font-size: 40px;">📍</span>
-        <h3>CRAS</h3>
-        <p>Proteção básica e Cadastro Único.</p>
-        <button class="btn-card" onclick="abrirModal('infoCras')">Saiba mais</button>
-    </div>
-
-    <!-- Card do CREAS -->
-    <div class="card" style="background: white; padding: 25px; border-radius: 12px; width: 280px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <span style="font-size: 40px;">🛡️</span>
-        <h3>CREAS</h3>
-        <p>Apoio em violação de direitos.</p>
-        <button class="btn-card" onclick="abrirModal('infoCreas')">Saiba mais</button>
-    </div>
-</section>
-
-<!-- JANELAS QUE FICAM ESCONDIDAS -->
-<div id="infoCras" class="modal">
-    <div class="modal-content">
-        <span class="fechar" onclick="fecharModal('infoCras')">&times;</span>
-        <h2>O que é o CRAS?</h2>
-        <br>
-        <p>O **CRAS** é a porta de entrada da Assistência Social. É onde você faz o **Cadastro Único**, solicita o Bolsa Família e recebe orientações sobre seus direitos.</p>
-    </div>
-</div>
-
-<div id="infoCreas" class="modal">
-    <div class="modal-content">
-        <span class="fechar" onclick="fecharModal('infoCreas')">&times;</span>
-        <h2>O que é o CREAS?</h2>
-        <br>
-        <p>O **CREAS** atende famílias e pessoas em situação de risco ou que tiveram seus direitos violados, como casos de violência, abandono ou negligência.</p>
-    </div>
-</div>
- </div>
+    <section class="servicos-rapidos">
+        <div class="card">
+            <span class="icon">📍</span>
+            <h3>CRAS</h3>
+            <p>Proteção básica e Cadastro Único.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCras')">Saiba mais</button>
+        </div>
 
         <div class="card">
             <span class="icon">🛡️</span>
             <h3>CREAS</h3>
-            <p>Apoio especializado para violação de direitos e violência.</p>
-            <a href="#">Saiba mais</a>
-        </div>
-
-        <div class="card">
-            <span class="icon">💰</span>
-            <h3>Benefícios</h3>
-            <p>Informações sobre Bolsa Família, BPC e auxílios.</p>
-            <a href="#">Como solicitar</a>
+            <p>Apoio em situações de violação.</p>
+            <button class="btn-saiba-mais" onclick="abrirModal('modalCreas')">Saiba mais</button>
         </div>
     </section>
+
+    <!-- JANELAS INFORMATIVAS (MODAIS) -->
+    <div id="modalCras" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal('modalCras')">&times;</span>
+            <h2>Sobre o CRAS</h2><br>
+            <p>O <b>CRAS</b> é a porta de entrada da Assistência Social. É onde você faz o <b>Cadastro Único</b>, solicita o <b>Bolsa Família</b> e recebe acompanhamento para sua família.</p>
+        </div>
+    </div>
+
+    <div id="modalCreas" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal('modalCreas')">&times;</span>
+            <h2>Sobre o CREAS</h2><br>
+            <p>O <b>CREAS</b> oferece apoio especializado para famílias em situação de risco ou que tiveram direitos violados, como casos de violência ou abandono.</p>
+        </div>
+    </div>
 
     <div class="container">
         <section class="info-section">
             <h2>O que é este projeto?</h2>
-            <p>Sou Mariana Barboza, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sobre CRAS, CREAS e benefícios sociais de forma simples e acessível.</p>
+            <p>Sou Mariana Barboza, Assistente Social e Desenvolvedora Front-end. Criei este espaço para ajudar cidadãos a encontrarem informações sociais de forma simples.</p>
         </section>
 
         <section class="info-section">
@@ -228,20 +115,26 @@
                 <summary>O que levar para o atendimento no CRAS?</summary>
                 <p>Documentos originais de todos da casa: RG, CPF, Carteira de Trabalho e Comprovante de Residência.</p>
             </details>
-            <details>
-                <summary>Como sei qual é a minha Regional?</summary>
-                <p>O atendimento é por território. Verifique na nossa lista de contatos qual unidade atende o seu bairro.</p>
-            </details>
         </section>
     </div>
 
     <footer>
-        <p>Guia de Acesso aos Direitos Sociais - Desenvolvido por Mariana Barboza</p>
-        <p>
-            <a href="https://github.com/Maribarboza" target="_blank">GitHub</a> | 
-            <a href="#" target="_blank">LinkedIn</a>
-        </p>
+        <p>Guia Social - Desenvolvido por Mariana Barboza</p>
     </footer>
+
+    <script>
+        function abrirModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function fecharModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
