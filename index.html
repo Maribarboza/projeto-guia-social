@@ -1,6 +1,54 @@
  <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+<style>
+    /* Estilo para a janelinha (Modal) */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1000; 
+        left: 0; top: 0; 
+        width: 100%; height: 100%; 
+        background-color: rgba(0,0,0,0.8); /* Fundo escuro */
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 30px;
+        border-radius: 15px;
+        width: 85%;
+        max-width: 500px;
+        position: relative;
+        text-align: left;
+    }
+
+    .fechar {
+        position: absolute;
+        top: 10px; right: 15px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Botão que aparece no card */
+    .btn-card {
+        background-color: #0044cc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+
+    .btn-card:hover {
+        background-color: #003399;
+    }
+</style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Direitos Sociais - Mariana Barboza</title>
