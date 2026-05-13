@@ -163,13 +163,43 @@
         </div>
     </header>
 
-    <section class="servicos-rapidos">
-        <div class="card">
-            <span class="icon">📍</span>
-            <h3>CRAS</h3>
-            <p>Proteção básica e Cadastro Único para programas sociais.</p>
-            <a href="contatos.html">Ver unidades</a>
-        </div>
+    <<section class="servicos-rapidos" style="display: flex; justify-content: center; gap: 20px; padding: 40px 20px; flex-wrap: wrap;">
+    <!-- Card do CRAS -->
+    <div class="card" style="background: white; padding: 25px; border-radius: 12px; width: 280px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <span style="font-size: 40px;">📍</span>
+        <h3>CRAS</h3>
+        <p>Proteção básica e Cadastro Único.</p>
+        <button class="btn-card" onclick="abrirModal('infoCras')">Saiba mais</button>
+    </div>
+
+    <!-- Card do CREAS -->
+    <div class="card" style="background: white; padding: 25px; border-radius: 12px; width: 280px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <span style="font-size: 40px;">🛡️</span>
+        <h3>CREAS</h3>
+        <p>Apoio em violação de direitos.</p>
+        <button class="btn-card" onclick="abrirModal('infoCreas')">Saiba mais</button>
+    </div>
+</section>
+
+<!-- JANELAS QUE FICAM ESCONDIDAS -->
+<div id="infoCras" class="modal">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal('infoCras')">&times;</span>
+        <h2>O que é o CRAS?</h2>
+        <br>
+        <p>O **CRAS** é a porta de entrada da Assistência Social. É onde você faz o **Cadastro Único**, solicita o Bolsa Família e recebe orientações sobre seus direitos.</p>
+    </div>
+</div>
+
+<div id="infoCreas" class="modal">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal('infoCreas')">&times;</span>
+        <h2>O que é o CREAS?</h2>
+        <br>
+        <p>O **CREAS** atende famílias e pessoas em situação de risco ou que tiveram seus direitos violados, como casos de violência, abandono ou negligência.</p>
+    </div>
+</div>
+ </div>
 
         <div class="card">
             <span class="icon">🛡️</span>
