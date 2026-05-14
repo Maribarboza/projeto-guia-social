@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos e Mapas BH | Guia Social</title>
+    <title>Unidades BH | Guia Social</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; }
-        header { background-color: #0044cc; color: white; text-align: center; padding: 30px; }
-        nav { background-color: #003399; padding: 15px; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; }
-        .regional-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .regional-card h2 { color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 5px; margin-bottom: 15px; }
-        .acoes { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-        .btn { padding: 8px 15px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        .btn-tel { background: #e7f0ff; color: #0044cc; }
-        .btn-mapa { background: #28a745; color: white; }
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; }
+        .card { background: white; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #0044cc; border-bottom: 2px solid #0044cc; margin-bottom: 15px; }
+        .btn-mapa { background: #28a745; color: white; padding: 8px 12px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <nav><a href="index.html">Início</a><a href="contatos.html">Contatos CRAS</a></nav>
-    <header><h1>Rede de Atendimento BH</h1><p>Todas as 9 Regionais com Mapas e Telefones.</p></header>
-    <div class="container">
-        <!-- Exemplo de Regional (Repetir para as 9) -->
-        <div class="regional-card">
-            <h2>Barreiro</h2>
-            <p><strong>CRAS Barreiro:</strong> Rua Pinheiro Chagas, 237.</p>
-            <div class="acoes">
-                <a href="tel:3132775899" class="btn btn-tel">📞 (31) 3277-5899</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
-            </div>
-        </div>
-        <!-- Adicione Leste, Nordeste, Noroeste, Norte, Oeste, Pampulha, Centro-Sul e Venda Nova aqui. -->
-    </div>
+    <a href="index.html">← Voltar</a>
+    <h1>Regionais de Belo Horizonte</h1>
+    
+    <div class="card"><h2>Barreiro</h2><p>Rua Pinheiro Chagas, 237. Tel: (31) 3277-5899</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Centro-Sul</h2><p>Rua Tupis, 149. Tel: (31) 3277-4950</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Centro-Sul+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Leste</h2><p>Rua Salinas, 1447. Tel: (31) 3277-4400</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Leste+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Nordeste</h2><p>Rua Queluzita, 45. Tel: (31) 3277-5111</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Nordeste+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Noroeste</h2><p>Rua Peçanha, 144. Tel: (31) 3277-7611</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Noroeste+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Norte</h2><p>Rua Pastor Murilo Cassete, 85. Tel: (31) 3277-6222</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Norte+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Oeste</h2><p>Av. Silva Lobo, 1280. Tel: (31) 3277-7001</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Oeste+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Pampulha</h2><p>Av. Antônio Carlos, 7596. Tel: (31) 3277-7888</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Pampulha+BH" class="btn-mapa">Ver Mapa</a></div>
+    <div class="card"><h2>Venda Nova</h2><p>Rua Padre Pedro Pinto, 1055. Tel: (31) 3277-5444</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Venda+Nova+BH" class="btn-mapa">Ver Mapa</a></div>
 </body>
 </html>
