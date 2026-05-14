@@ -1,31 +1,87 @@
-document.addEventListener('input', (e) => {
-    // Verifica se estamos digitando no campo de busca
-    if (e.target.id === 'inputBusca') {
-        const termo = e.target.value.trim().toLowerCase();
-        
-        // Selecionamos as SEÇÕES (da index) e as LINHAS da tabela (da contatos)
-        // Certifique-se de que suas linhas na tabela tenham a tag <tr>
-        const itensParaFiltrar = document.querySelectorAll('.card-servico, tbody tr');
+// AGUARDA O CARREGAMENTO DO DOM
+document.addEventListener('DOMContentLoaded', () => {
+    initSearchFilter();
+    initAccordions();
+    initScrollToTop();
+});
 
-        itensParaFiltrar.forEach(item => {
-            const textoDoItem = item.textContent.toLowerCase();
+/**
+ * 1. FILTRO INTELIGENTE DE UNIDADES (Página Contatos)
+ * Filtra cards e atualiza um contador de resultados
+ */
+function initSearchFilter() {
+    const searchInput = document.querySelector('#searchInput');
+    const cards = document.querySelectorAll('.card-unidade');
+    const counter = document.querySelector('#resultCounter');
 
-            if (termo === "" || textoDoItem.includes(termo)) {
-                // Se o termo bater ou a busca estiver vazia, mostra o item
-                item.style.display = ""; 
-                
-                // Feedback visual: se estiver buscando, destaca a linha/card com azul claro
-                if (termo !== "") {
-                    item.style.backgroundColor = "#f0f7ff";
-                } else {
-                    item.style.backgroundColor = ""; // Reseta quando apaga
-                }
-            } else {
-                // Se não bater, esconde a linha ou o card
-                item.style.display = "none";
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        let foundCount = 0;
+
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            const isMatch = text.includes(term);
+            
+            // Transição suave de exibição
+            card.style.display = isMatch ? 'block' : 'none';
+            if (isMatch) foundCount++;
+        });
+
+        // Atualiza o contador se ele existir no HTML
+        if (counter) {
+            counter.textContent = `${foundCount} unidade(s) encontrada(s)`;
+        }
+    });
+}
+
+/**
+ * 2. ACORDIONS INTERATIVOS (Página Benefícios)
+ * Garante que apenas um item abra por vez (UX focado)
+ */
+function initAccordions() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const body = header.nextElementSibling;
+            const isOpen = body.style.maxHeight;
+
+            // Fecha todos os outros antes de abrir o atual
+            document.querySelectorAll('.accordion-body').forEach(el => {
+                el.style.maxHeight = null;
+                el.parentElement.classList.remove('active');
+            });
+
+            // Abre o selecionado
+            if (!isOpen) {
+                body.style.maxHeight = body.scrollHeight + "px";
+                header.parentElement.classList.add('active');
             }
         });
-    }
-});
-// Atualiza o ano automaticamente
-document.getElementById('ano-atual').textContent = new Date().getFullYear();
+    });
+}
+
+/**
+ * 3. BOTÃO VOLTAR AO TOPO
+ * Aparece apenas quando o usuário rola a página para baixo
+ */
+function initScrollToTop() {
+    const btn = document.createElement('button');
+    btn.innerHTML = '↑';
+    btn.className = 'btn-scroll-top';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
