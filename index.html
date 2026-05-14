@@ -5,48 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Social BH | Mariana Barboza</title>
     <style>
-        :root { --azul: #0044cc; --fundo: #f4f7f6; }
+        :root { --azul: #0044cc; --azul-escuro: #003399; --fundo: #f4f7f6; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--fundo); color: #333; }
-        nav { background: #003399; padding: 15px; text-align: center; }
+        nav { background: var(--azul-escuro); padding: 15px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
         header { background: var(--azul); color: white; padding: 60px 20px; text-align: center; }
         .container { max-width: 1000px; margin: -30px auto 50px; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--azul); margin-bottom: 10px; }
-        .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--azul); color: white; border-radius: 5px; text-decoration: none; }
-        footer { text-align: center; padding: 40px; background: white; border-top: 1px solid #ddd; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 35px; border-radius: 15px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-bottom: 5px solid var(--azul); }
+        .card h3 { color: var(--azul); margin-bottom: 15px; font-size: 1.5rem; }
+        .btn { display: inline-block; margin-top: 15px; padding: 12px 25px; background: var(--azul); color: white; border-radius: 8px; text-decoration: none; font-weight: bold; }
+        footer { text-align: center; padding: 40px; background: white; border-top: 1px solid #ddd; margin-top: 50px; }
     </style>
 </head>
 <body>
     <nav>
         <a href="index.html">Início</a>
-        <a href="contatos.html">Unidades/Mapas</a>
-        <a href="beneficios.html">Benefícios</a>
+        <a href="contatos.html">Unidades e Mapas</a>
+        <a href="beneficios.html">Benefícios Sociais</a>
     </nav>
     <header>
         <h1>Guia Social Belo Horizonte</h1>
-        <p>Acesso direto aos seus direitos socioassistenciais</p>
+        <p>Acesso centralizado aos serviços do SUAS e Direitos Sociais</p>
     </header>
     <div class="container">
         <div class="grid">
             <div class="card" onclick="window.location.href='contatos.html'">
-                <h3>📍 Unidades CRAS</h3>
-                <p>Encontre o endereço e o mapa da sua regional.</p>
-                <span class="btn">Ver Endereços</span>
+                <h3>📍 Onde ser atendido?</h3>
+                <p>Encontre o CRAS da sua regional, telefones atualizados e rotas no mapa.</p>
+                <span class="btn">Ver Regionais</span>
             </div>
             <div class="card" onclick="window.location.href='beneficios.html'">
-                <h3>📄 Benefícios</h3>
-                <p>Bolsa Família, BPC e Cadastro Único atualizado.</p>
-                <span class="btn">Saiba Mais</span>
+                <h3>📄 O que posso receber?</h3>
+                <p>Consulte regras e documentos para Bolsa Família, BPC e Cadastro Único.</p>
+                <span class="btn">Ver Benefícios</span>
             </div>
         </div>
     </div>
     <footer>
-        <p><strong>Mariana Barboza</strong> - Assistente Social</p>
-        <p>Projeto de UX Design e Desenvolvimento Front-end</p>
+        <p><strong>Mariana Barboza</strong> - Assistente Social e Desenvolvedora</p>
+        <p>Projeto acadêmico - Certificado Profissional de UX Design do Google</p>
     </footer>
 </body>
 </html>
