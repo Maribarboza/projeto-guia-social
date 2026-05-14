@@ -1,44 +1,136 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unidades BH | Pesquisa Inteligente</title>
     <style>
-        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; }
+        :root { --primary: #0044cc; --fundo: #f0f2f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--fundo); padding: 20px; color: #333; }
+        .container { max-width: 850px; margin: 0 auto; }
+        
+        .header-busca { text-align: center; margin-bottom: 40px; }
         .search-box { 
-            max-width: 600px; margin: 20px auto 40px; padding: 15px; 
-            border-radius: 50px; border: 2px solid #0044cc; width: 100%; font-size: 1.1rem;
+            max-width: 500px; margin: 20px auto; padding: 15px 25px; 
+            border-radius: 50px; border: 2px solid var(--primary); 
+            width: 100%; font-size: 1.1rem; outline: none;
+            box-shadow: 0 4px 15px rgba(0,68,204,0.1);
         }
-        .container { max-width: 800px; margin: 0 auto; }
-        .card { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; display: block; }
+
+        .grid-unidades { display: grid; gap: 20px; }
+        .card { 
+            background: white; padding: 25px; border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--primary);
+            transition: 0.3s;
+        }
+        .card:hover { transform: scale(1.02); }
+        .card h2 { color: var(--primary); margin-bottom: 8px; font-size: 1.4rem; }
+        .card p { margin-bottom: 15px; color: #666; }
+        
+        .btn-mapa { 
+            background: #28a745; color: white; padding: 10px 20px; 
+            text-decoration: none; border-radius: 8px; font-weight: bold; 
+            display: inline-block; font-size: 0.9rem;
+        }
         .hidden { display: none; }
-        .btn-mapa { background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        .voltar { text-decoration: none; color: var(--primary); font-weight: bold; display: block; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html">← Voltar</a>
-        <h1 style="margin-top: 20px;">Pesquisar Unidade</h1>
-        <input type="text" id="filterInput" class="search-box" placeholder="Digite sua regional (ex: Barreiro, Norte...)">
 
-        <div id="unitsList">
-            <div class="card" data-name="barreiro"><h2>Barreiro</h2><p>Rua Pinheiro Chagas, 237</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+BH" class="btn-mapa">Ver no Mapa</a></div>
-            <div class="card" data-name="centro-sul"><h2>Centro-Sul</h2><p>Rua Tupis, 149</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Centro-Sul+BH" class="btn-mapa">Ver no Mapa</a></div>
-            <div class="card" data-name="leste"><h2>Leste</h2><p>Rua Salinas, 1447</p><a href="https://www.google.com/maps/search/?api=1&query=CRAS+Leste+BH" class="btn-mapa">Ver no Mapa</a></div>
-            <!-- Adicione as outras aqui com o mesmo padrão data-name -->
+    <div class="container">
+        <a href="index.html" class="voltar">← Voltar ao Início</a>
+        
+        <div class="header-busca">
+            <h1>Encontre sua Regional</h1>
+            <p>Digite o nome da regional para filtrar os endereços</p>
+            <input type="text" id="filterInput" class="search-box" placeholder="Ex: Venda Nova, Barreiro, Norte...">
+        </div>
+
+        <div id="unitsList" class="grid-unidades">
+            <!-- 1. BARREIRO -->
+            <div class="card" data-name="barreiro">
+                <h2>Barreiro</h2>
+                <p><strong>Endereço:</strong> Rua Pinheiro Chagas, 237. Barreiro.</p>
+                <p><strong>Telefone:</strong> (31) 3277-5899</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 2. CENTRO-SUL -->
+            <div class="card" data-name="centro-sul">
+                <h2>Centro-Sul</h2>
+                <p><strong>Endereço:</strong> Rua Tupis, 149. Centro.</p>
+                <p><strong>Telefone:</strong> (31) 3277-4950</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Centro-Sul+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 3. LESTE -->
+            <div class="card" data-name="leste">
+                <h2>Leste</h2>
+                <p><strong>Endereço:</strong> Rua Salinas, 1447. Santa Tereza.</p>
+                <p><strong>Telefone:</strong> (31) 3277-4400</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Leste+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 4. NORDESTE -->
+            <div class="card" data-name="nordeste">
+                <h2>Nordeste</h2>
+                <p><strong>Endereço:</strong> Rua Queluzita, 45. Bairro São Paulo.</p>
+                <p><strong>Telefone:</strong> (31) 3277-5111</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Nordeste+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 5. NOROESTE -->
+            <div class="card" data-name="noroeste">
+                <h2>Noroeste</h2>
+                <p><strong>Endereço:</strong> Rua Peçanha, 144. Carlos Prates.</p>
+                <p><strong>Telefone:</strong> (31) 3277-7611</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Noroeste+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 6. NORTE -->
+            <div class="card" data-name="norte">
+                <h2>Norte</h2>
+                <p><strong>Endereço:</strong> Rua Pastor Murilo Cassete, 85. São Bernardo.</p>
+                <p><strong>Telefone:</strong> (31) 3277-6222</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Norte+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 7. OESTE -->
+            <div class="card" data-name="oeste">
+                <h2>Oeste</h2>
+                <p><strong>Endereço:</strong> Av. Silva Lobo, 1280. Nova Granada.</p>
+                <p><strong>Telefone:</strong> (31) 3277-7001</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Oeste+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 8. PAMPULHA -->
+            <div class="card" data-name="pampulha">
+                <h2>Pampulha</h2>
+                <p><strong>Endereço:</strong> Av. Antônio Carlos, 7596. São Luiz.</p>
+                <p><strong>Telefone:</strong> (31) 3277-7888</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Pampulha+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
+
+            <!-- 9. VENDA NOVA -->
+            <div class="card" data-name="venda nova">
+                <h2>Venda Nova</h2>
+                <p><strong>Endereço:</strong> Rua Padre Pedro Pinto, 1055. Venda Nova.</p>
+                <p><strong>Telefone:</strong> (31) 3277-5444</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Venda+Nova+BH" target="_blank" class="btn-mapa">📍 Ver no Mapa</a>
+            </div>
         </div>
     </div>
 
     <script>
-        // JAVASCRIPT DE FILTRO EM TEMPO REAL
+        // FILTRO DINÂMICO
         document.getElementById('filterInput').addEventListener('keyup', function() {
-            let value = this.value.toLowerCase();
+            let input = this.value.toLowerCase();
             let cards = document.querySelectorAll('.card');
             
             cards.forEach(card => {
                 let name = card.getAttribute('data-name');
-                if(name.includes(value)) {
+                if(name.includes(input)) {
                     card.classList.remove('hidden');
                 } else {
                     card.classList.add('hidden');
@@ -46,5 +138,6 @@
             });
         });
     </script>
+
 </body>
 </html>
