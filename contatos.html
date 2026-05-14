@@ -1,122 +1,91 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos - Guia Social</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contatos CRAS BH - Guia Social Mariana Barboza</title>
+    
+    <style>
+        /* PADRONIZAÇÃO COM O INDEX */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+
+        header { background-color: #0044cc; color: white; text-align: center; padding: 30px 20px; }
+        nav { background-color: #003399; padding: 12px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+
+        .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+        
+        /* ESTILO DA LISTA DE CONTATOS */
+        .regional-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .regional-card h2 { color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; font-size: 1.2rem; }
+        
+        .unidade-box { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .unidade-box:last-child { border-bottom: none; }
+        .unidade-box h3 { font-size: 1.05rem; color: #444; }
+        .unidade-box p { font-size: 0.95rem; color: #666; }
+        
+        .badge-tel { display: inline-block; background: #e7f0ff; color: #0044cc; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-top: 5px; text-decoration: none; }
+        
+        footer { background: #003399; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
 </head>
 <body>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="contatos.html">Contatos CRAS</a>
+    </nav>
+
     <header>
-        <nav>
-    <a href="index.html">Início</a>
-    <a href="contatos.html">Contatos</a>
-    <a href="sobre.html">Sobre</a>
-</nav>
-
-        <div style="padding: 20px 0;">
-            <h1>Contatos e Regionais</h1>
-            <p>Lista completa de telefones e unidades de BH.</p>
-        </div>
-
-        <!-- Barra de busca para filtrar a tabela -->
-        <div style="text-align: center; padding-bottom: 20px;">
-            <input type="text" id="inputBusca" placeholder="Busque por regional ou bairro..." 
-            style="padding: 12px; width: 85%; border-radius: 8px; border: 1px solid #ccc;">
-        </div>
+        <h1>Lista Completa de Unidades CRAS</h1>
+        <p>Belo Horizonte - Contatos e Endereços por Regional</p>
     </header>
 
-    <main style="padding: 20px;">
-<section class="informativos-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
-    
-    <!-- Informativo BPC -->
-    <div style="background-color: #fff3cd; padding: 10px 15px; border-radius: 8px; border-left: 5px solid #ffc107; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-        <h4 style="margin: 0; color: #856404; font-size: 1rem;">📌 Renda BPC: <span style="font-weight: normal; font-size: 0.9rem;">Menor que 1/4 do salário mín.</span></h4>
-    </div>
-
-    <!-- Informativo Bolsa Família -->
-    <div style="background-color: #d1ecf1; padding: 10px 15px; border-radius: 8px; border-left: 5px solid #0c5460; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-        <h4 style="margin: 0; color: #0c5460; font-size: 1rem;">👨‍👩‍👧‍👦 Bolsa Família: <span style="font-weight: normal; font-size: 0.9rem;">Até R$ 218,00 por pessoa.</span></h4>
-    </div>
-
-    <!-- Informativo CadÚnico -->
-    <div style="background-color: #d4edda; padding: 10px 15px; border-radius: 8px; border-left: 5px solid #155724; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-        <h4 style="margin: 0; color: #155724; font-size: 1rem;">✅ CadÚnico: <span style="font-weight: normal; font-size: 0.9rem;">Atualizar a cada 24 meses.</span></h4>
-  
-  </div>
-
-</section> 
-        <div style="overflow-x: auto; background-color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <table style="width: 100%; border-collapse: collapse;">
-                <thead>
-                    <tr style="background-color: #0056b3; color: white; text-align: left;">
-                        <th style="padding: 15px; border: 1px solid #ddd;">Regional</th>
-                        <th style="padding: 15px; border: 1px solid #ddd;">CRAS</th>
-                        <th style="padding: 15px; border: 1px solid #ddd;">Telefone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Barreiro</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Barreiro / Vila Copacabana</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132775899">(31) 3277-5899</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Centro-Sul</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Santa Rita de Cássia</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132774363">(31) 3277-4363</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Leste</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Alto Vera Cruz / Taquaril</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132775640">(31) 3277-5640</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Nordeste</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Paulo VI / São Paulo</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132776228">(31) 3277-6228</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Noroeste</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Lagoinha / Sr. dos Passos</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777615">(31) 3277-7615</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Norte</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Novo Aarão Reis / Zilah Spósito</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777427">(31) 3277-7427</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Oeste</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Morro das Pedras / Havaí</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777013">(31) 3277-7013</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Pampulha</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Santa Rosa / São José</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132777856">(31) 3277-7856</a></td>
-                    </tr>
-                    <tr class="linha-contato">
-                        <td style="padding: 12px; border: 1px solid #ddd;"><b>Venda Nova</b></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Lagoa / Jardim Europa</td>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:3132775440">(31) 3277-5440</a></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="container">
+        
+        <!-- REGIONAL BARREIRO -->
+        <div class="regional-card">
+            <h2>Barreiro</h2>
+            <div class="unidade-box">
+                <h3>CRAS Barreiro</h3>
+                <p>Rua Pinheiro Chagas, 237 - Barreiro</p>
+                <a href="tel:3132775899" class="badge-tel">(31) 3277-5899</a>
+            </div>
+            <div class="unidade-box">
+                <h3>CRAS Vila Pinho</h3>
+                <p>Rua Coletora, 440 - Vila Pinho</p>
+                <a href="tel:3132775933" class="badge-tel">(31) 3277-5933</a>
+            </div>
         </div>
-    </main>
 
-    <footer style="padding: 20px; text-align: center;">
-        <p>Desenvolvido por Mariana Luiza Mendes Barboza</p>
+        <!-- REGIONAL CENTRO-SUL -->
+        <div class="regional-card">
+            <h2>Centro-Sul</h2>
+            <div class="unidade-box">
+                <h3>CRAS Vila Antena</h3>
+                <p>Rua Central, 122 - Vila Antena</p>
+                <a href="tel:3132774950" class="badge-tel">(31) 3277-4950</a>
+            </div>
+        </div>
+
+        <!-- REGIONAL NOROESTE -->
+        <div class="regional-card">
+            <h2>Noroeste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Noroeste</h3>
+                <p>Rua Peçanha, 144 - Carlos Prates</p>
+                <a href="tel:3132777611" class="badge-tel">(31) 3277-7611</a>
+            </div>
+        </div>
+
+        <!-- Dica: Você pode copiar o bloco de "regional-card" para as outras 6 regionais -->
+
+    </div>
+
+    <footer>
+        <p>Guia Social BH - Organizado por Mariana Barboza</p>
     </footer>
-
-    <script src="script.js"></script>
-<!-- Botão do WhatsApp Limpo e Funcional -->
-<a href="whatsapp://send?text=Olha%20esse%20Guia%20de%20Direitos%20Sociais:%20https://github.io" 
-   style="position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px; background-color: #25d366; border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 30px;">
-   📞
-</a>
-
 
 </body>
 </html>
