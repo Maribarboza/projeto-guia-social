@@ -308,3 +308,28 @@ header h1 {
     font-size: 2rem;
 }
 
+/* Botão Voltar ao Topo */
+.btn-scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #0044cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.btn-scroll-top.visible { opacity: 1; }
+
+/* Animação do Acordion */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
