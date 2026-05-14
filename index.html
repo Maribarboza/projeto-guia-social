@@ -5,71 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Social BH | Mariana Barboza</title>
     <style>
-        :root { --azul-primario: #0044cc; --azul-escuro: #003399; --cinza-fundo: #f8f9fa; }
+        /* CONFIGURAÇÃO E CORES PROFISSIONAIS */
+        :root {
+            --azul-primario: #0044cc;
+            --azul-escuro: #003399;
+            --verde-sucesso: #28a745;
+            --cinza-fundo: #f8f9fa;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--cinza-fundo); color: #333; line-height: 1.6; }
-        nav { background-color: var(--azul-escuro); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: 600; }
-        .hero { background: linear-gradient(135deg, var(--azul-primario) 0%, #0066ff 100%); color: white; padding: 80px 20px; text-align: center; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--cinza-fundo); color: #333; line-height: 1.6; }
+
+        /* NAVEGAÇÃO */
+        nav { background-color: var(--azul-escuro); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: 600; font-size: 1.1rem; }
+        nav a:hover { text-decoration: underline; }
+
+        /* SEÇÃO HERO (DESTAQUE) */
+        .hero { 
+            background: linear-gradient(135deg, var(--azul-primario) 0%, #0066ff 100%);
+            color: white; padding: 80px 20px; text-align: center;
+        }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+
+        .search-container { position: relative; max-width: 550px; margin: 0 auto; }
+        .search-container input { 
+            width: 100%; padding: 18px 25px; border-radius: 50px; border: none; 
+            font-size: 1.1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* CARDS DE SERVIÇOS CLICÁVEIS */
         .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
         .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; border-bottom: 5px solid transparent; }
+        
+        .card { 
+            background: white; padding: 40px 30px; border-radius: 20px; text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: transform 0.3s ease;
+            border-bottom: 5px solid transparent; cursor: pointer;
+        }
         .card:hover { transform: translateY(-10px); border-bottom-color: var(--azul-primario); }
-        .btn-acao { display: inline-block; background: var(--azul-primario); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-top: 15px; font-weight: bold; }
-        .sobre-autora { background: white; padding: 60px 20px; text-align: center; }
+        .card .icon { font-size: 50px; margin-bottom: 20px; display: block; }
+        .card h3 { margin-bottom: 15px; color: var(--azul-escuro); font-size: 1.5rem; }
+        
+        .btn-acao { 
+            display: inline-block; background-color: var(--azul-primario); color: white; 
+            padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px;
+        }
+
+        /* SEÇÃO SOBRE A AUTORA */
+        .sobre-autora { 
+            background: white; margin: 60px 0; padding: 60px 20px; text-align: center; border-top: 1px solid #eee;
+        }
+        .sobre-autora-content { max-width: 800px; margin: 0 auto; }
+        .badge-ux { 
+            display: inline-block; background: #fff3cd; color: #856404; 
+            padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px;
+        }
+
+        /* MODAIS */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
         .modal-content { background: white; margin: 5% auto; padding: 30px; border-radius: 20px; width: 90%; max-width: 700px; position: relative; max-height: 80vh; overflow-y: auto; }
         .fechar { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; }
-        .regional-item { text-align: left; padding: 10px; border-bottom: 1px solid #eee; }
+        .regional-item { text-align: left; padding: 12px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .btn-mini-mapa { font-size: 0.8rem; background: var(--verde-sucesso); color: white; padding: 5px 10px; border-radius: 5px; text-decoration: none; }
+
+        footer { background: var(--azul-escuro); color: white; text-align: center; padding: 40px 20px; }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html">Início</a>
         <a href="contatos.html">Unidades e Mapas</a>
+        <a href="beneficios.html">Benefícios</a>
     </nav>
+
     <section class="hero">
         <h1>Guia Social Belo Horizonte</h1>
-        <p>Informações centralizadas sobre CRAS, CREAS e Direitos Sociais.</p>
+        <p>Acesso rápido e humanizado às informações sobre direitos sociais, CRAS, CREAS e benefícios na capital mineira.</p>
+        <div class="search-container">
+            <input type="text" placeholder="Qual serviço ou regional você procura?">
+        </div>
     </section>
+
     <div class="container">
         <div class="grid-servicos">
+            
+            <!-- CARD CRAS -->
             <div class="card" onclick="abrirModal('modalCras')">
-                <span>📍</span><h3>CRAS</h3>
-                <p>Porta de entrada para o Cadastro Único em BH.</p>
+                <span class="icon">📍</span>
+                <h3>CRAS</h3>
+                <p>Proteção Social Básica. Porta de entrada para o Bolsa Família e Cadastro Único em BH.</p>
                 <span class="btn-acao">Ver Regionais</span>
             </div>
+
+            <!-- CARD CREAS -->
             <div class="card" onclick="abrirModal('modalCreas')">
-                <span>🛡️</span><h3>CREAS</h3>
-                <p>Atendimento para violação de direitos em BH.</p>
+                <span class="icon">🛡️</span>
+                <h3>CREAS</h3>
+                <p>Proteção Especial. Atendimento para situações de violência ou violação de direitos.</p>
                 <span class="btn-acao">Ver Unidades</span>
             </div>
-            <div class="card" onclick="window.location.href='contatos.html'">
-                <<div class="card" onclick="window.location.href='beneficios.html'">
-    <span>📄</span><h3>Benefícios</h3>
-    <p>Documentação e regras para Bolsa Família, BPC e CadÚnico.</p>
-    <span class="btn-acao">Ver Detalhes</span>
-</div>
+
+            <!-- CARD BENEFÍCIOS -->
+            <div class="card" onclick="window.location.href='beneficios.html'">
+                <span class="icon">📄</span>
+                <h3>Benefícios</h3>
+                <p>Documentação e regras para Bolsa Família, BPC (LOAS) e Cadastro Único atualizado.</p>
+                <span class="btn-acao">Ver Detalhes</span>
+            </div>
+
+        </div>
+    </div>
 
     <section class="sobre-autora">
-        <h2>Mariana Barboza</h2>
-        <p>Assistente Social e Desenvolvedora Front-end.</p>
+        <div class="sobre-autora-content">
+            <span class="badge-ux">PROJETO GOOGLE UX DESIGN</span>
+            <h2>Mariana Barboza</h2>
+            <p><strong>Assistente Social e Desenvolvedora Front-end.</strong></p><br>
+            <p>Este guia une minha experiência no SUAS com estudos de UX Design para democratizar o acesso à informação socioassistencial em Belo Horizonte.</p>
+        </div>
     </section>
+
+    <!-- MODAL CRAS COMPLETO -->
     <div id="modalCras" class="modal">
         <div class="modal-content">
             <span class="fechar" onclick="fecharModal('modalCras')">&times;</span>
-            <h2>CRAS por Regional</h2>
-            <div class="regional-item"><strong>Barreiro:</strong> Rua Pinheiro Chagas, 237.</div>
-            <div class="regional-item"><strong>Centro-Sul:</strong> Rua Tupis, 149.</div>
-            <div class="regional-item"><strong>Venda Nova:</strong> Rua Padre Pedro Pinto, 1055.</div>
-            <p><small>Veja a lista de todas as 9 regionais na página de Contatos.</small></p>
+            <h2>Unidades CRAS por Regional</h2><br>
+            <div class="regional-item"><span>Barreiro: R. Pinheiro Chagas, 237</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Centro-Sul: R. Tupis, 149</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Centro-Sul+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Leste: R. Salinas, 1447</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Leste+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Nordeste: R. Queluzita, 45</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Nordeste+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Noroeste: R. Peçanha, 144</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Noroeste+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Norte: R. Pastor Murilo Cassete, 85</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Norte+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Oeste: Av. Silva Lobo, 1280</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Oeste+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Pampulha: Av. Antônio Carlos, 7596</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Pampulha+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>Venda Nova: R. Padre Pedro Pinto, 1055</span> <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Venda+Nova+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
         </div>
     </div>
+
+    <!-- MODAL CREAS -->
+    <div id="modalCreas" class="modal">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal('modalCreas')">&times;</span>
+            <h2>Unidades CREAS</h2><br>
+            <div class="regional-item"><span>CREAS Sede: Av. Augusto de Lima, 1491</span> <a href="https://www.google.com/maps/search/?api=1&query=CREAS+Sede+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+            <div class="regional-item"><span>CREAS Leste: R. Anhanguera, 240</span> <a href="https://www.google.com/maps/search/?api=1&query=CREAS+Leste+BH" target="_blank" class="btn-mini-mapa">MAPA</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Guia de Acesso aos Direitos Sociais - Mariana Barboza</p>
+    </footer>
+
     <script>
         function abrirModal(id) { document.getElementById(id).style.display = "block"; }
         function fecharModal(id) { document.getElementById(id).style.display = "none"; }
         window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display = 'none'; }
     </script>
+
 </body>
 </html>
