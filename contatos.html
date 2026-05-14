@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatos e Mapas - Guia Social BH</title>
     <style>
+        /* PADRONIZAÇÃO VISUAL MARIANA BARBOZA */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
         header { background-color: #0044cc; color: white; text-align: center; padding: 40px 20px; }
@@ -13,11 +14,12 @@
         .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
         
         .regional-card { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .regional-card h2 { color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; }
+        .regional-card h2 { color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; font-size: 1.2rem; }
         .unidade-box { padding: 15px 0; border-bottom: 1px solid #eee; }
         .unidade-box:last-child { border-bottom: none; }
+        .unidade-box h3 { font-size: 1.1rem; color: #222; margin-bottom: 5px; }
         
-        /* BOTÕES */
+        /* BOTÕES DE AÇÃO */
         .acoes { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
         .btn { display: inline-flex; align-items: center; padding: 8px 15px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
         
@@ -39,7 +41,7 @@
 
     <header>
         <h1>Rede de Atendimento e Mapas</h1>
-        <p>Localize a unidade mais próxima de você em Belo Horizonte</p>
+        <p>Belo Horizonte - Lista Completa das 9 Regionais</p>
     </header>
 
     <div class="container">
@@ -52,7 +54,7 @@
                 <p>Rua Pinheiro Chagas, 237 - Barreiro</p>
                 <div class="acoes">
                     <a href="tel:3132775899" class="btn btn-tel">📞 (31) 3277-5899</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Barreiro+Belo+Horizonte" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
                 </div>
             </div>
         </div>
@@ -61,11 +63,37 @@
         <div class="regional-card">
             <h2>Centro-Sul</h2>
             <div class="unidade-box">
-                <h3>CRAS Centro-Sul</h3>
-                <p>Rua Tupis, 149 - Centro</p>
+                <h3>CRAS Centro-Sul / Vila Antena</h3>
+                <p>Rua Central, 122 - Vila Antena</p>
                 <div class="acoes">
                     <a href="tel:3132774950" class="btn btn-tel">📞 (31) 3277-4950</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Centro-Sul+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Vila+Antena+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LESTE -->
+        <div class="regional-card">
+            <h2>Leste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Leste / Santa Tereza</h3>
+                <p>Rua Salinas, 1447 - Santa Tereza</p>
+                <div class="acoes">
+                    <a href="tel:3132774400" class="btn btn-tel">📞 (31) 3277-4400</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Leste+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NORDESTE -->
+        <div class="regional-card">
+            <h2>Nordeste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Nordeste / São Gabriel</h3>
+                <p>Rua Queluzita, 45 - São Gabriel</p>
+                <div class="acoes">
+                    <a href="tel:3132775111" class="btn btn-tel">📞 (31) 3277-5111</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Nordeste+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
                 </div>
             </div>
         </div>
@@ -83,13 +111,63 @@
             </div>
         </div>
 
-        <!-- Adicione as outras regionais seguindo o mesmo padrão de link do Google Maps acima -->
+        <!-- NORTE -->
+        <div class="regional-card">
+            <h2>Norte</h2>
+            <div class="unidade-box">
+                <h3>CRAS Norte / São Bernardo</h3>
+                <p>Rua Pastor Murilo Cassete, 85 - São Bernardo</p>
+                <div class="acoes">
+                    <a href="tel:3132776222" class="btn btn-tel">📞 (31) 3277-6222</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Norte+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- OESTE -->
+        <div class="regional-card">
+            <h2>Oeste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Oeste / Silva Lobo</h3>
+                <p>Avenida Silva Lobo, 1280 - Nova Granada</p>
+                <div class="acoes">
+                    <a href="tel:3132777001" class="btn btn-tel">📞 (31) 3277-7001</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Oeste+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAMPULHA -->
+        <div class="regional-card">
+            <h2>Pampulha</h2>
+            <div class="unidade-box">
+                <h3>CRAS Pampulha</h3>
+                <p>Avenida Antônio Carlos, 7596 - São Luís</p>
+                <div class="acoes">
+                    <a href="tel:3132777888" class="btn btn-tel">📞 (31) 3277-7888</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Pampulha+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- VENDA NOVA -->
+        <div class="regional-card">
+            <h2>Venda Nova</h2>
+            <div class="unidade-box">
+                <h3>CRAS Venda Nova</h3>
+                <p>Rua Padre Pedro Pinto, 1055 - Venda Nova</p>
+                <div class="acoes">
+                    <a href="tel:3132775444" class="btn btn-tel">📞 (31) 3277-5444</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=CRAS+Venda+Nova+BH" target="_blank" class="btn btn-mapa">📍 Como Chegar</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <footer>
-        <p>Guia Social BH - Mariana Barboza</p>
-        <p><small>Assistente Social e Desenvolvedora Front-end</small></p>
+        <p>Guia de Acesso aos Direitos Sociais BH</p>
+        <p>Desenvolvido por Mariana Barboza - Assistente Social e Dev Front-end</p>
     </footer>
 
 </body>
