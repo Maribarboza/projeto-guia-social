@@ -2,36 +2,110 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benefícios Sociais | Guia BH</title>
     <style>
-        body { font-family: sans-serif; background: #f4f7f6; padding: 30px; line-height: 1.8; color: #333; }
+        :root { --primary: #0044cc; --fundo: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--fundo); padding: 20px; color: #333; }
         .container { max-width: 800px; margin: 0 auto; }
-        .box { background: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; border-left: 6px solid #0044cc; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        h1 { color: #003399; margin-bottom: 30px; }
-        h3 { color: #0044cc; margin-bottom: 10px; }
-        .voltar { text-decoration: none; color: #0044cc; font-weight: bold; }
+        .voltar { text-decoration: none; color: var(--primary); font-weight: bold; }
+        
+        h1 { color: #003399; margin: 20px 0; text-align: center; }
+
+        /* ESTILO DO ACORDION */
+        .acordion-item { background: white; margin-bottom: 10px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        
+        .acordion-header { 
+            padding: 20px; background: white; cursor: pointer; 
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: bold; color: var(--primary); transition: 0.3s;
+        }
+        .acordion-header:hover { background: #f0f5ff; }
+
+        .acordion-content { 
+            padding: 0 20px; max-height: 0; overflow: hidden; 
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background: #fafafa; border-top: 0 solid #eee;
+        }
+
+        .acordion-item.active .acordion-content { padding: 20px; max-height: 500px; border-top-width: 1px; }
+        .acordion-item.active .seta { transform: rotate(180deg); }
+        
+        .badge { background: #eef4ff; color: var(--primary); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-top: 10px; display: inline-block; }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <a href="index.html" class="voltar">← Voltar para o Início</a>
-        <h1>Guia de Benefícios e Direitos</h1>
+        <a href="index.html" class="voltar">← Voltar ao Início</a>
+        <h1>Guia de Direitos e Benefícios</h1>
 
-        <div class="box">
-            <h3>📝 Cadastro Único (CadÚnico)</h3>
-            <p>O CadÚnico é a porta de entrada para programas sociais. Deve ser atualizado a cada 2 anos ou sempre que houver mudanças na família.</p>
-            <p><strong>Documentos:</strong> CPF, Título de Eleitor, Comprovante de Residência e documentos de todos na casa.</p>
+        <!-- CADASTRO ÚNICO -->
+        <div class="acordion-item">
+            <div class="acordion-header">
+                <span>📝 Cadastro Único (CadÚnico)</span>
+                <span class="seta">▼</span>
+            </div>
+            <div class="acordion-content">
+                <p>O CadÚnico é o registro que permite ao governo saber quem são e como vivem as famílias de baixa renda no Brasil. É a porta de entrada para quase todos os programas sociais.</p>
+                <div class="badge">Necessário CPF e Comprovante de Residência</div>
+            </div>
         </div>
 
-        <div class="box">
-            <h3>💰 Bolsa Família</h3>
-            <p>Destinado a famílias com renda per capita mensal de até R$ 218.</p>
+        <!-- BOLSA FAMÍLIA -->
+        <div class="acordion-item">
+            <div class="acordion-header">
+                <span>💰 Bolsa Família</span>
+                <span class="seta">▼</span>
+            </div>
+            <div class="acordion-content">
+                <p>Programa de transferência de renda. Para ter direito, a renda de cada pessoa da família deve ser de, no máximo, R$ 218 por mês.</p>
+                <p><strong>Exigência:</strong> Manter crianças na escola e vacinação em dia.</p>
+            </div>
         </div>
 
-        <div class="box">
-            <h3>♿ BPC (LOAS)</h3>
-            <p>Benefício de um salário mínimo para idosos (65+) ou PCD de baixa renda.</p>
+        <!-- BPC / LOAS -->
+        <div class="acordion-item">
+            <div class="acordion-header">
+                <span>♿ BPC (LOAS)</span>
+                <span class="seta">▼</span>
+            </div>
+            <div class="acordion-content">
+                <p>Garante um salário mínimo mensal à pessoa com deficiência e ao idoso com 65 anos ou mais que comprovem não possuir meios de prover a própria manutenção.</p>
+                <div class="badge">Requer avaliação social e médica do INSS</div>
+            </div>
         </div>
+
+        <!-- TARIFA SOCIAL -->
+        <div class="acordion-item">
+            <div class="acordion-header">
+                <span>💡 Tarifa Social de Energia</span>
+                <span class="seta">▼</span>
+            </div>
+            <div class="acordion-content">
+                <p>Desconto na conta de luz para famílias inscritas no Cadastro Único com renda familiar mensal per capita menor ou igual a meio salário mínimo.</p>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        // JAVASCRIPT PARA CONTROLAR O ACORDION
+        const headers = document.querySelectorAll('.acordion-header');
+        
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                
+                // Fecha outros itens abertos (Opcional - UX de foco)
+                document.querySelectorAll('.acordion-item').forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
