@@ -2,101 +2,27 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benefícios Sociais - Guia Social BH</title>
+    <title>Benefícios | Guia Social</title>
     <style>
-        :root { --azul-primario: #0044cc; --azul-escuro: #003399; --cinza-fundo: #f8f9fa; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--cinza-fundo); color: #333; line-height: 1.6; }
-        
-        header { background: linear-gradient(135deg, var(--azul-primario) 0%, #0066ff 100%); color: white; text-align: center; padding: 60px 20px; }
-        nav { background-color: var(--azul-escuro); padding: 15px; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        
-        /* GRID DE BENEFÍCIOS */
-        .grid-beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        
-        .beneficio-card { 
-            background: white; border-radius: 15px; padding: 30px; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-left: 6px solid var(--azul-primario);
-        }
-        .beneficio-card h3 { color: var(--azul-escuro); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .beneficio-card p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
-        
-        /* LISTA DE DOCUMENTOS */
-        .doc-list { background: #eef4ff; padding: 15px; border-radius: 10px; font-size: 0.85rem; }
-        .doc-list ul { list-style: none; margin-top: 5px; }
-        .doc-list li::before { content: "✔️ "; }
-
-        footer { background: var(--azul-escuro); color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        body { font-family: sans-serif; background: #f4f7f6; padding: 20px; line-height: 1.6; }
+        .box { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #0044cc; }
+        h1 { color: #003399; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="contatos.html">Unidades e Mapas</a>
-        <a href="beneficios.html">Benefícios</a>
-    </nav>
-
-    <header>
-        <h1>Benefícios e Direitos Sociais</h1>
-        <p>Saiba como acessar os principais programas em Belo Horizonte</p>
-    </header>
-
-    <div class="container">
-        <div class="grid-beneficios">
-            
-            <!-- CADASTRO ÚNICO -->
-            <div class="beneficio-card">
-                <h3><span>📝</span> Cadastro Único</h3>
-                <p>A "porta de entrada" para programas sociais do Governo Federal. É necessário manter os dados atualizados a cada 2 anos.</p>
-                <div class="doc-list">
-                    <strong>Documentos Necessários:</strong>
-                    <ul>
-                        <li>CPF ou Título de Eleitor</li>
-                        <li>Documento de todos que moram na casa</li>
-                        <li>Comprovante de residência</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BOLSA FAMÍLIA -->
-            <div class="beneficio-card">
-                <h3><span>💰</span> Bolsa Família</h3>
-                <p>Programa de transferência direta de renda para famílias em situação de pobreza ou extrema pobreza.</p>
-                <div class="doc-list">
-                    <strong>Requisitos básicos:</strong>
-                    <ul>
-                        <li>Renda mensal por pessoa de até R$ 218</li>
-                        <li>Estar no Cadastro Único atualizado</li>
-                        <li>Crianças na escola e vacinação em dia</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BPC / LOAS -->
-            <div class="beneficio-card">
-                <h3><span>♿</span> BPC (LOAS)</h3>
-                <p>Benefício de um salário mínimo para idosos acima de 65 anos ou pessoas com deficiência de qualquer idade.</p>
-                <div class="doc-list">
-                    <strong>Critérios:</strong>
-                    <ul>
-                        <li>Renda por pessoa de até 1/4 do salário</li>
-                        <li>Avaliação médica e social pelo INSS</li>
-                        <li>Inscrição obrigatória no CadÚnico</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
+    <a href="index.html">← Voltar</a>
+    <h1>Direitos e Benefícios</h1>
+    <div class="box">
+        <h3>Cadastro Único (CadÚnico)</h3>
+        <p>Base para todos os programas. Necessário CPF e comprovante de endereço.</p>
     </div>
-
-    <footer>
-        <p>Guia Social BH - Mariana Barboza</p>
-    </footer>
-
+    <div class="box">
+        <h3>Bolsa Família</h3>
+        <p>Para famílias com renda de até R$ 218 por pessoa.</p>
+    </div>
+    <div class="box">
+        <h3>BPC / LOAS</h3>
+        <p>Para idosos (65+) ou PCD de baixa renda.</p>
+    </div>
 </body>
 </html>
