@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos CRAS BH - Guia Social Mariana Barboza</title>
-    
+    <title>Contatos Completos - Guia Social BH</title>
     <style>
-        /* PADRONIZAÇÃO COM O INDEX */
+        /* PADRONIZAÇÃO VISUAL MARIANA BARBOZA */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
-
-        header { background-color: #0044cc; color: white; text-align: center; padding: 30px 20px; }
+        header { background-color: #0044cc; color: white; text-align: center; padding: 40px 20px; }
         nav { background-color: #003399; padding: 12px; text-align: center; }
         nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-
         .container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
         
-        /* ESTILO DA LISTA DE CONTATOS */
-        .regional-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .regional-card h2 { color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; font-size: 1.2rem; }
-        
-        .unidade-box { padding: 10px 0; border-bottom: 1px solid #eee; }
+        /* ESTILO DOS CARDS POR REGIONAL */
+        .regional-card { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .regional-card h2 { color: #0044cc; border-bottom: 2px solid #0044cc; padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; }
+        .unidade-box { padding: 15px 0; border-bottom: 1px solid #eee; }
         .unidade-box:last-child { border-bottom: none; }
-        .unidade-box h3 { font-size: 1.05rem; color: #444; }
-        .unidade-box p { font-size: 0.95rem; color: #666; }
+        .unidade-box h3 { font-size: 1.1rem; color: #222; margin-bottom: 5px; }
+        .unidade-box p { font-size: 0.95rem; color: #555; }
+        .badge-tel { display: inline-block; background: #e7f0ff; color: #0044cc; padding: 5px 12px; border-radius: 6px; font-weight: bold; margin-top: 8px; text-decoration: none; transition: 0.3s; }
+        .badge-tel:hover { background: #0044cc; color: white; }
         
-        .badge-tel { display: inline-block; background: #e7f0ff; color: #0044cc; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-top: 5px; text-decoration: none; }
-        
-        footer { background: #003399; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        footer { background: #003399; color: white; text-align: center; padding: 30px; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -38,53 +34,117 @@
     </nav>
 
     <header>
-        <h1>Lista Completa de Unidades CRAS</h1>
-        <p>Belo Horizonte - Contatos e Endereços por Regional</p>
+        <h1>Rede de Atendimento - BH</h1>
+        <p>Lista completa de endereços e telefones das 9 Regionais</p>
     </header>
 
     <div class="container">
         
-        <!-- REGIONAL BARREIRO -->
+        <!-- BARREIRO -->
         <div class="regional-card">
             <h2>Barreiro</h2>
             <div class="unidade-box">
                 <h3>CRAS Barreiro</h3>
                 <p>Rua Pinheiro Chagas, 237 - Barreiro</p>
-                <a href="tel:3132775899" class="badge-tel">(31) 3277-5899</a>
+                <a href="tel:3132775899" class="badge-tel">Ligar: (31) 3277-5899</a>
             </div>
             <div class="unidade-box">
                 <h3>CRAS Vila Pinho</h3>
                 <p>Rua Coletora, 440 - Vila Pinho</p>
-                <a href="tel:3132775933" class="badge-tel">(31) 3277-5933</a>
+                <a href="tel:3132775933" class="badge-tel">Ligar: (31) 3277-5933</a>
             </div>
         </div>
 
-        <!-- REGIONAL CENTRO-SUL -->
+        <!-- CENTRO-SUL -->
         <div class="regional-card">
             <h2>Centro-Sul</h2>
             <div class="unidade-box">
-                <h3>CRAS Vila Antena</h3>
-                <p>Rua Central, 122 - Vila Antena</p>
-                <a href="tel:3132774950" class="badge-tel">(31) 3277-4950</a>
+                <h3>CRAS Centro-Sul (Referência)</h3>
+                <p>Rua Tupis, 149 - Centro</p>
+                <a href="tel:3132774950" class="badge-tel">Ligar: (31) 3277-4950</a>
+            </div>
+            <div class="unidade-box">
+                <h3>CREAS Centro-Sul</h3>
+                <p>Avenida Augusto de Lima, 1491 - Barro Preto</p>
+                <a href="tel:3132774555" class="badge-tel">Ligar: (31) 3277-4555</a>
             </div>
         </div>
 
-        <!-- REGIONAL NOROESTE -->
+        <!-- LESTE -->
+        <div class="regional-card">
+            <h2>Leste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Leste / Santa Tereza</h3>
+                <p>Rua Salinas, 1447 - Santa Tereza</p>
+                <a href="tel:3132774400" class="badge-tel">Ligar: (31) 3277-4400</a>
+            </div>
+        </div>
+
+        <!-- NORDESTE -->
+        <div class="regional-card">
+            <h2>Nordeste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Nordeste / São Gabriel</h3>
+                <p>Rua Queluzita, 45 - São Gabriel</p>
+                <a href="tel:3132775111" class="badge-tel">Ligar: (31) 3277-5111</a>
+            </div>
+        </div>
+
+        <!-- NOROESTE -->
         <div class="regional-card">
             <h2>Noroeste</h2>
             <div class="unidade-box">
-                <h3>CRAS Noroeste</h3>
+                <h3>CRAS Noroeste / Carlos Prates</h3>
                 <p>Rua Peçanha, 144 - Carlos Prates</p>
-                <a href="tel:3132777611" class="badge-tel">(31) 3277-7611</a>
+                <a href="tel:3132777611" class="badge-tel">Ligar: (31) 3277-7611</a>
             </div>
         </div>
 
-        <!-- Dica: Você pode copiar o bloco de "regional-card" para as outras 6 regionais -->
+        <!-- NORTE -->
+        <div class="regional-card">
+            <h2>Norte</h2>
+            <div class="unidade-box">
+                <h3>CRAS Norte / São Bernardo</h3>
+                <p>Rua Pastor Murilo Cassete, 85 - São Bernardo</p>
+                <a href="tel:3132776222" class="badge-tel">Ligar: (31) 3277-6222</a>
+            </div>
+        </div>
+
+        <!-- OESTE -->
+        <div class="regional-card">
+            <h2>Oeste</h2>
+            <div class="unidade-box">
+                <h3>CRAS Oeste / Silva Lobo</h3>
+                <p>Avenida Silva Lobo, 1280 - Nova Granada</p>
+                <a href="tel:3132777001" class="badge-tel">Ligar: (31) 3277-7001</a>
+            </div>
+        </div>
+
+        <!-- PAMPULHA -->
+        <div class="regional-card">
+            <h2>Pampulha</h2>
+            <div class="unidade-box">
+                <h3>CRAS Pampulha</h3>
+                <p>Avenida Antônio Carlos, 7596 - São Luís</p>
+                <a href="tel:3132777888" class="badge-tel">Ligar: (31) 3277-7888</a>
+            </div>
+        </div>
+
+        <!-- VENDA NOVA -->
+        <div class="regional-card">
+            <h2>Venda Nova</h2>
+            <div class="unidade-box">
+                <h3>CRAS Venda Nova</h3>
+                <p>Rua Padre Pedro Pinto, 1055 - Venda Nova</p>
+                <a href="tel:3132775444" class="badge-tel">Ligar: (31) 3277-5444</a>
+            </div>
+        </div>
 
     </div>
 
     <footer>
-        <p>Guia Social BH - Organizado por Mariana Barboza</p>
+        <p>Guia de Acesso aos Direitos Sociais - Mariana Barboza</p>
+        <p><small>Assistente Social e Desenvolvedora Front-end</small></p>
     </footer>
 
 </body>
