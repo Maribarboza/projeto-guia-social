@@ -40,7 +40,7 @@
             <!-- Campo de Pesquisa Ativo -->
             <div class="max-w-2xl mx-auto relative">
                 <input type="text" id="searchInput" placeholder="Digite o nome do serviço, bairro ou tipo (ex: CRAS, Centro, CadÚnico)..." class="w-full pl-5 pr-12 py-4 rounded-xl text-slate-800 placeholder-slate-400 shadow-xl focus:outline-none focus:ring-4 focus:ring-amber-400 transition-all text-sm md:text-base">
-                <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none">
                     🔍
                 </div>
             </div>
@@ -204,7 +204,6 @@
                     }
                 });
 
-                // Atualizar contador e mensagem de sem resultados
                 if (visibleCount === 0) {
                     noResults.classList.remove('hidden');
                 } else {
@@ -214,10 +213,8 @@
                 cardCounter.innerText = `Exibindo ${visibleCount} de ${cards.length}`;
             }
 
-            // Evento ao digitar no campo de busca
             searchInput.addEventListener('input', updateFilters);
 
-            // Evento ao clicar nos botões de categoria
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     filterButtons.forEach(btn => {
